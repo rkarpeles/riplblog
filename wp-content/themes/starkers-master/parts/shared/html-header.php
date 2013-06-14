@@ -8,9 +8,14 @@
 		<title><?php bloginfo( 'name' ); ?><?php wp_title( '|' ); ?></title>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Remove if you're not building a responsive site. (But then why would you do such a thing?) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico"/>
+		<!--Allow lt IE9 to render HTML5 elements-->
+		<!--[if lt IE 9]>
+			<script src="wp-content/themes/starkers-master/js/html5shiv.js"></script> 
+			<script src="wp-content/themes/starkers-master/js/html5shiv-printshiv.js"></script> 
+		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>

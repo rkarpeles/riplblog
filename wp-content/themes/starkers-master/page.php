@@ -14,12 +14,16 @@
  * @since 		Starkers 4.0
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-<h2><?php the_title(); ?></h2>
-<?php the_content(); ?>
-<?php comments_template( '', true ); ?>
-<?php endwhile; ?>
+	<div class="content">
 
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+		<h2><?php the_title(); ?></h2>
+		<?php the_content(); ?>
+		<?php comments_template( '', true ); ?>
+		<?php endwhile; ?>
+
+	</div>
+
+<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>

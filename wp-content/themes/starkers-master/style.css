@@ -1,44 +1,260 @@
 /*
 Theme Name: 	Starkers
 Theme URI: 		http://viewportindustries.com/products/starkers
-Description: 	The totally nude Wordpress theme!
+Description: 	The totally stark Wordpress theme!
 Version: 		4.0
 Author: 		Elliot Jay Stocks & Keir Whitaker
 Author URI: 	http://viewportindustries.com
 Tags: 			starkers, naked, clean, basic
 */
 
-/*
-===========================
+
+/* 
+============================
 CONTENTS:
 
-01 Sensible defaults
+0.0 Sensible defaults 
+1.0 Base
+2.0 Layout
 02 Typography
 03 Media queries 
-===========================
+
+============================
 */
 
-/* ---------------------------------------------------------------------------------------------------------- 
-01 Sensible defaults ----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------- */
+
+/* =======================================================
+   0.0 Sensible defaults 
+   ======================================================= */
 
 @import "css/reset.css";
+  
+.group:after { 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  content: "."; 
+  visibility: hidden; /* For clearing */ }
+  
+::-moz-selection {
+  background: #a00; 
+  color: #fff; }
+  
+::selection { 
+  background: #a00; 
+  color: #fff; }
+  
+  
+/* =======================================================
+   1.0 $Base
+   ======================================================= */
+   
+* { /* Preserves box model regardless of padding, margins, etc. */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+   
+body {
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  color: #222;
+  font-size: .95em;
+  line-height: 1.385;
+  background: #e5e5e5; }
+  
+.background {
+  position: fixed; 
+  z-index: -100;
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%; }
+  
+.background img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%; }
+  
+p {
+  margin: 0 0 1.5em 0; }
+  
+a {
+  color: #a00;
+  text-decoration: none; }
+  
+a:hover, a:active {
+  color: #222; }
+  
+img {
+  max-width: 100%;
+  height: auto; }
+  
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
 
-div,
-article,
-section,
-header,
-footer,
-nav,
-li					{ position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
-.group:after 		{ display:block; height:0; clear:both; content:"."; visibility:hidden; /* For clearing */ }
-body 				{ background:#fff; /* Don't forget to style your body to avoid user overrides */ }
-::-moz-selection 	{ background:#ff0; color:#333; }
-::selection 		{ background:#ff0; color:#333; }
+.clearfix:before, 
+.clearfix:after {
+  content: "";
+  display: table; }
 
-/* ---------------------------------------------------------------------------------------------------------- 
-02 Typography -----------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------- */
+.clearfix:after {
+  clear: both; }
+  
+.clearfix {  
+  *zoom: 1; /* For IE 6/7 only */ } 
+  
+  
+/* =======================================================
+   2.0 $Layout
+   ======================================================= */
+  
+.container1 { /* Reveals the .sidebar-left */
+  float: left;
+  position: relative;
+  width: 100%;
+  right: 58%;  
+  background: #ededed;     
+  border-right: 0px solid #939393; } 
+  
+.container2 { /* Reveals the .content section */
+  float: left;
+  position: relative;  
+  width: 100%;
+  right: 21%;
+  background: #fff;
+  border-right: 0px solid #939393;  }  
+  
+.container3 { /* Reveals the .sidebar-right */
+  float: left;
+  position: relative; 
+  width: 100%;
+  overflow: hidden;
+  background: #ededed;   
+  border-right: 0px solid #939393; }  
+  
+.wrap {
+  width: 80%;
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+	 -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+		  box-shadow: 0 2px 10px rgba(0, 0, 0, .1); }
+  
+/* Header
+   ======================================================== */ 
+  
+header {
+  position: relative;
+  z-index: 100; /* Keeps logo above wrap overlap */
+  margin-bottom: 0px; /* Removes spacing beneath header; */ }
+  
+.logo { /* For the H1 class in the header */
+  margin-bottom: 0; }
+  
+/* Content
+   ======================================================== */ 
+   
+.content { 
+  float: left;
+  position: relative;
+  width: 58%;
+  left: 79%;
+  overflow: hidden;
+  padding: 15px 3% 25px; } 
+  
+/* Sidebars
+   ======================================================== */ 
+   
+.sidebar-left { 
+  float: left;
+  position: relative;
+  width: 21%;
+  left: 79%;
+  overflow: hidden;
+  padding: 32px 2%; } 
+  
+.sidebar-right { 
+  float: left;
+  position: relative;
+  width: 21%;
+  left: 79%;
+  overflow: hidden;
+  padding: 32px 2%; } 
+  
+.sidebar ul, .sidebar li {
+  margin-top: 0;
+  list-style-type: none; }
+  
+.sidebar li {
+  padding: 2px 0; }
+  
+.sidebar a {
+  text-decoration: none; }
+  
+.sidebar h2 {
+  margin: 0 0 .75em;
+  font-size: 1em; }
+
+/* Footer
+   ======================================================== */ 
+  
+footer {
+  padding: 14px 2.5%; /* Left & right padding same as sidebar */
+  width: 100%;
+  background: #1c1c1c;
+  color: #fff;
+  clear: both; } 
+  
+.footer-menu li {
+  display: inline-block;
+  padding: 5px 15px 5px 0; }
+  
+.footer-menu a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: .9em; }
+  
+.footer-menu a:hover, .footer-menu a:active {
+  text-decoration: underline; }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+/* =======================================================
+   02 Typography
+   ======================================================= */
 /*
 
 14 / 16	= 		0.875em 		(14px equivalent)
@@ -59,18 +275,13 @@ h2,
 h3, 
 h4, 
 h5, 
-h6 					{ font-weight:bold; /* This helps to identify headings at the initial build stage, but you should write something more precise later on */ }
+h6 { 
+  font-weight:bold; }
 
-/* ---------------------------------------------------------------------------------------------------------- 
-03 Media queries (using a mobile-first approach) ------------------------------------------------------------
----------------------------------------------------------------------------------------------------------- */
+/* =======================================================
+   03 Media queries 
+   ======================================================= */
 
-/* 400 and up */
-@media screen and (min-width:400px) {
-
-					{ /* Place your styles here for all widths greater than 400px */ }
-
-}
 
 /* Retina Display */
 @media screen and (-webkit-min-device-pixel-ratio:2) {
