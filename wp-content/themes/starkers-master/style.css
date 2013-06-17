@@ -16,8 +16,9 @@ CONTENTS:
 0.0 Sensible defaults 
 1.0 Base
 2.0 Layout
-02 Typography
-03 Media queries 
+3.0 Theme
+4.0 Responsive 
+
 
 ============================
 */
@@ -112,6 +113,13 @@ hr {
 .clearfix {  
   *zoom: 1; /* For IE 6/7 only */ } 
   
+/* Forms
+   ======================================================== */ 
+ 
+input[type="text"] {
+  width: 100%; 
+  max-width: 250px; }
+  
   
 /* =======================================================
    2.0 $Layout
@@ -173,6 +181,13 @@ header {
   overflow: hidden;
   padding: 15px 3% 25px; } 
   
+/* Article
+   ======================================================== */ 
+   
+article {
+  margin-bottom: 1em; }
+   
+   
 /* Sidebars
    ======================================================== */ 
    
@@ -192,8 +207,10 @@ header {
   overflow: hidden;
   padding: 32px 2%; } 
   
-.sidebar ul, .sidebar li {
-  margin-top: 0;
+.sidebar ul {
+  margin-bottom: 1em; }
+
+.sidebar li {
   list-style-type: none; }
   
 .sidebar li {
@@ -228,7 +245,104 @@ footer {
 .footer-menu a:hover, .footer-menu a:active {
   text-decoration: underline; }
   
+/* =======================================================
+   3.0 $Theme
+   ======================================================= */  
+
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.17em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; } 
+
+.time-date {
+  margin-top: .25em;
+  margin-bottom: 1em; }
   
+.excerpt p {
+  margin-bottom: .7em; }
+  
+#comments {
+  margin-top: 1.5em; }
+  
+
+/* =======================================================
+   4.0 $Responsive
+   ======================================================= */   
+   
+/* Max Queries
+   ======================================================= */
+
+@media only screen and (max-width: 980px) {
+
+	.wrap {
+	  width: 88%;
+	  margin: 30px auto; }
+	  
+}   
+  
+@media only screen and (max-width: 780px) {
+
+	.wrap {
+	  margin: 20px auto; }
+	
+	.container1 {
+	  width: 100%;  
+	  left: 21%; 
+	  background: #fff; } 
+	  
+	.container2 {
+	  width: 100%;
+	  background: white;   
+	  border: none; } 
+
+    .container3 {
+	  width: 100%;
+	  background: white;   
+	  border: none; } 	  
+	  
+	.content { 
+	  left: 0%;
+	  width: 100%;
+	  padding: 5px 6% 15px;   
+	  border-left: none; } 	
+	   
+	.sidebar-left {	  
+	  left: 0%;
+	  width: 100%;
+	  overflow: hidden;
+	  padding: 20px 3%;
+	  background: #ededed;
+      border-bottom: 1px solid #939393; }
+	  
+	.sidebar-right { 
+	  left: 0%;
+	  width: 100%;
+      background: #ededed; }
+
+    .issue {
+	  display: none; }	  
+	  
+	.footer {
+	  padding: 15px 6%; }
+
+	/*.columns {
+	  margin-bottom: 0; }
+
+	.one-half, .one-third, .two-thirds, .two-forths, .one-forth, .two-thirds-right, .one-third-left {
+	  width: 100%;
+	  float: none;
+	  margin: 0 0 1.5em 0; } */
+	
+}
+
+@media only screen and (max-width: 500px) {
+
+    .wrap {
+	  width: 90%;
+      margin: 15px auto; }
+	  
+}
   
   
   

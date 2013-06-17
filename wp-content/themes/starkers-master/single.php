@@ -17,8 +17,15 @@
 
 		<article>
 
-			<h2><?php the_title(); ?></h2>
-			<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
+			<h1><?php the_title(); ?></h1>
+			<div class="time-date">
+				<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+			</div>
+			
+			<!--Comments are blocked out for now-->  
+			<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
+			<!------------------------------------>
+			
 			<?php the_content(); ?>			
 
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
