@@ -1,9 +1,9 @@
 <div class="sidebar">	
 	<div class="sidebar-right">
-		<ul>
+		<ul>			
 			<?php 
 				if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-right')) : ?>		
-			<?php endif; ?>
+			<?php endif; ?>			
 		</ul>
 	</div>
 </div>
