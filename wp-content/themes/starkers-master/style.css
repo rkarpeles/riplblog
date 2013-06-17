@@ -264,23 +264,9 @@ h6 { font-size: .75em; }
 #comments {
   margin-top: 1.5em; }  
   
-/**
- * Flare Social Media Buttons
- */
- 
-.flare-horizontal .flare-flyout {
-    width: 135px;
-    height: 0;
-    min-width: 0;
-    padding: 6px 0 0 6px;
-    bottom: 90px !important;
-    margin-left: -6px;
-    overflow: hidden; }
- 
-.flare-horizontal .flare-flyout .flare-flyout-inner {
-    width: 110px;
-    height: 32px; }
-
+iframe.addthis_button_tweet {
+  width: 195px; }
+  
   
 /* Helper Classes
    ======================================================= */

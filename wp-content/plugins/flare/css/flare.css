@@ -261,8 +261,8 @@
     height: 0;
     min-width: 0;
     padding: 6px 0 0 6px;
-    bottom: 30px;
-    margin-left: -6px;
+    bottom: 102px;
+    margin-left: -4px;
     overflow: hidden;
 }
 .flare-horizontal.enablecounters .flare-flyout {
@@ -271,7 +271,7 @@
 }
 .flare-horizontal .flare-flyout.hover,
 .flare-horizontal .flare-flyout:hover {
-    height: 70px;
+    height: 57px;
 }
 .flare-left .flare-flyout {
     padding: 10px 0 0 63px;
