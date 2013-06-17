@@ -179,14 +179,7 @@ header {
   width: 58%;
   left: 79%;
   overflow: hidden;
-  padding: 15px 3% 25px; } 
-  
-/* Article
-   ======================================================== */ 
-   
-article {
-  margin-bottom: 1em; }
-   
+  padding: 21px 3% 25px; } 
    
 /* Sidebars
    ======================================================== */ 
@@ -197,7 +190,7 @@ article {
   width: 21%;
   left: 79%;
   overflow: hidden;
-  padding: 32px 2%; } 
+  padding: 25px 2%; } 
   
 .sidebar-right { 
   float: left;
@@ -205,7 +198,7 @@ article {
   width: 21%;
   left: 79%;
   overflow: hidden;
-  padding: 32px 2%; } 
+  padding: 25px 2%; } 
   
 .sidebar ul {
   margin-bottom: 1em; }
@@ -259,12 +252,29 @@ h6 { font-size: .75em; }
   margin-top: .25em;
   margin-bottom: 1em; }
   
+.excerpt {
+  padding-bottom: 1.25em; 
+  margin-bottom: 1em;
+  border-bottom: 1px solid #dedede; }
+  
 .excerpt p {
-  margin-bottom: .7em; }
+  margin-bottom: .7em; }  
   
 #comments {
   margin-top: 1.5em; }
   
+/* Helper Classes
+   ======================================================= */
+
+.bot-mar-0 { margin-bottom: 0; }
+.bot-mar-1 { margin-bottom: .25em; }
+.bot-mar-2 { margin-bottom: .5em; }
+.bot-mar-3 { margin-bottom: .75em; }
+.bot-mar-4 { margin-bottom: 1em; }
+.bot-mar-5 { margin-bottom: 1.25em; }
+.bot-mar-6 { margin-bottom: 1.5em; }
+.bot-mar-7 { margin-bottom: 2em; } 
+ 
 
 /* =======================================================
    4.0 $Responsive
@@ -311,9 +321,8 @@ h6 { font-size: .75em; }
 	  left: 0%;
 	  width: 100%;
 	  overflow: hidden;
-	  padding: 20px 3%;
-	  background: #ededed;
-      border-bottom: 1px solid #939393; }
+	  padding: 15px 3%;
+	  background: #ededed; }
 	  
 	.sidebar-right { 
 	  left: 0%;

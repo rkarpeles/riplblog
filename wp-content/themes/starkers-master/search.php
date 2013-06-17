@@ -9,23 +9,36 @@
  * @since 		Starkers 4.0
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
 
-<?php if ( have_posts() ): ?>
-<h2>Search Results for '<?php echo get_search_query(); ?>'</h2>	
-<ol>
-<?php while ( have_posts() ) : the_post(); ?>
-	<li>
-		<article>
-			<h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
-			<?php the_content(); ?>
-		</article>
-	</li>
-<?php endwhile; ?>
-</ol>
-<?php else: ?>
-<h2>No results found for '<?php echo get_search_query(); ?>'</h2>
-<?php endif; ?>
+<div class="content">
 
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
+	<?php if ( have_posts() ): ?>
+	<h2>Search Results for '<?php echo get_search_query(); ?>'</h2>	
+	<ol>
+	<?php while ( have_posts() ) : the_post(); ?>
+		<li>
+			<article>
+				<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<div class="time-date">
+					<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+				</div>
+				
+				<!--Comments are blocked out for now-->  
+				<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
+				<!------------------------------------>
+				
+				<div class="excerpt">
+					<?php the_excerpt(); ?>
+				</div>
+			</article>
+		</li>
+	<?php endwhile; ?>
+	</ol>
+	<?php else: ?>
+	<h2>No results found for '<?php echo get_search_query(); ?>'</h2>
+	<?php endif; ?>
+
+</div>
+
+<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>
