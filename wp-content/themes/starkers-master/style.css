@@ -157,9 +157,9 @@ textarea {
   margin: 40px auto;
   padding: 0;
   background: #fff;
-  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
-	 -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
-		  box-shadow: 0 2px 10px rgba(0, 0, 0, .1); }
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+	 -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+		  box-shadow: 0 2px 10px rgba(0, 0, 0, .2); }
   
 /* Header
    ======================================================== */ 
@@ -257,11 +257,11 @@ h6 { font-size: .75em; }
 .post-time-date {  
   margin-bottom: 1em; 
   padding-bottom: .75em;
-  border-bottom: 1px solid #dedede; }
+  border-bottom: 4px double #dedede; }
   
 .excerpt {
-  padding-bottom: 1.25em; 
-  margin-bottom: 1em;
+  padding-bottom: 1.4em; 
+  margin-bottom: 1.2em;
   border-bottom: 1px solid #dedede; }
   
 .excerpt p {
@@ -283,25 +283,32 @@ h6 { font-size: .75em; }
 /**
  * Comments 
  */ 
+ 
+.comments-section {
+  padding-top: 1em;
+  margin-top: .25em;
+  border-top: 4px double #dedede; }
     
 #comments li {
   border-bottom: 1px solid #dedede;
-  margin-bottom: 1.25em;   }
+  margin-bottom: 1.25em; }
    
 #comments label {
   width: 100%;
   display: block; }
+
+#comments img {
+  float: left;
+  margin-right: 15px; }
   
 .comments-number {
   padding-bottom: 1em;
   margin-bottom: 1.25em;
   border-bottom: 1px solid #dedede; }
   
-.comments-section {
-  padding-top: 1em;
-  margin-top: .25em;
-  border-top: 4px double #dedede; }
-  
+.comments-time {
+  margin-bottom: .5em; }
+   
 /* Helper Classes
    ======================================================= */
 

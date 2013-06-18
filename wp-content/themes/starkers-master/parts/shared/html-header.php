@@ -13,8 +13,8 @@
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico"/>
 		<!--Allow lt IE9 to render HTML5 elements-->
 		<!--[if lt IE 9]>
-			<script src="wp-content/themes/starkers-master/js/html5shiv.js"></script> 
-			<script src="wp-content/themes/starkers-master/js/html5shiv-printshiv.js"></script> 
+			<script src="http://localhost/riplblog/wp-content/themes/starkers-master/js/html5shiv.js"></script> 
+			<script src="http://localhost/riplblogwp-content/themes/starkers-master/js/html5shiv-printshiv.js"></script> 
 		<![endif]-->
 		<?php wp_head(); ?>
 	</head>

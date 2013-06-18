@@ -39,10 +39,6 @@
 					<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
 				</div>
 				
-				<!--Comments are blocked out for now-->  
-				<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
-				<!------------------------------------>
-				
 				<div class="excerpt">
 					<?php the_excerpt(); ?>
 				</div>
