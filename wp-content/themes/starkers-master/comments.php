@@ -30,7 +30,9 @@
 
 	<?php if ( have_comments() ) : ?>
 
-	<h2><?php comments_number(); ?></h2>
+	<div class="comments-number">
+		<h2><?php comments_number(); ?></h2>
+	</div>
 
 	<ol>
 		<?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>

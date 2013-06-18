@@ -91,7 +91,7 @@ a:hover, a:active {
   
 img {
   max-width: 100%;
-  height: auto; }
+  vertical-align: middle; }
   
 hr {
   display: block;
@@ -251,8 +251,13 @@ h3 { font-size: 1.17em; }
 h5 { font-size: .83em; }
 h6 { font-size: .75em; } 
 
-.time-date {  
-  margin-bottom: 1em; }
+.time-date {
+  margin-bottom: .75em; }
+
+.post-time-date {  
+  margin-bottom: 1em; 
+  padding-bottom: .75em;
+  border-bottom: 1px solid #dedede; }
   
 .excerpt {
   padding-bottom: 1.25em; 
@@ -271,21 +276,14 @@ h6 { font-size: .75em; }
   margin: 2px 15px 1px 0; }  
   
 .content-thumb img {
-  float: left;    
-  width: 30%;  
-  max-width: 100px;
+  float: left;  
   border: 4px double #ccc;
-  margin: 2px 15px 5px 0; } 
+  margin: 3px 15px 5px 0; } 
   
 /**
  * Comments 
  */ 
-  
-#comments {
-  border-top: 4px double #dedede;
-  padding-top: 1em; 
-  margin-top: .5em; } 
-  
+    
 #comments li {
   border-bottom: 1px solid #dedede;
   margin-bottom: 1.25em;   }
@@ -293,6 +291,16 @@ h6 { font-size: .75em; }
 #comments label {
   width: 100%;
   display: block; }
+  
+.comments-number {
+  padding-bottom: 1em;
+  margin-bottom: 1.25em;
+  border-bottom: 1px solid #dedede; }
+  
+.comments-section {
+  padding-top: 1em;
+  margin-top: .25em;
+  border-top: 4px double #dedede; }
   
 /* Helper Classes
    ======================================================= */

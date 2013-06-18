@@ -18,7 +18,7 @@
 		<article>
 
 			<h1><?php the_title(); ?></h1>
-			<div class="time-date">
+			<div class="time-date post-time-date">
 				<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
 			</div>
 			
@@ -38,7 +38,9 @@
 			<?php the_author_meta( 'description' ); ?>
 			<?php endif; ?>
 
-			<?php comments_template( '', true ); ?>
+			<div class="comments-section">
+				<?php comments_template( '', true ); ?>
+			</div>
 
 		</article>
 		<?php endwhile; ?>
