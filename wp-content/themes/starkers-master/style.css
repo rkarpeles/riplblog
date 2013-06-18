@@ -58,7 +58,7 @@ body {
   font-family: Arial, 'Helvetica Neue', sans-serif;
   color: #222;
   font-size: .95em;
-  line-height: 1.385;
+  line-height: 1.395;
   background: #e5e5e5; }
   
 .background {
@@ -80,7 +80,7 @@ body {
   min-height: 50%; }
   
 p {
-  margin: 0 0 1.5em 0; }
+  margin: 0 0 1.25em 0; }
   
 a {
   color: #a00;
@@ -258,7 +258,6 @@ h6 { font-size: .75em; }
   border-bottom: 1px solid #dedede; }
   
 .excerpt p {
-
   margin-bottom: .7em; }  
   
 #comments {
@@ -266,6 +265,20 @@ h6 { font-size: .75em; }
   
 .share-this {
   margin-bottom: .7em; }
+  
+.excerpt-thumb img {
+  float: left; 
+  display: inline; 
+  border: 4px double #ccc;
+  margin: 2px 15px 1px 0; }  
+  
+.content-thumb img {
+  float: left; 
+  display: inline;
+  width: 30%;  
+  max-width: 100px;
+  border: 4px double #ccc;
+  margin: 1px 15px 5px 0; } 
    
 /* Helper Classes
    ======================================================= */
@@ -302,7 +315,7 @@ h6 { font-size: .75em; }
 	
 	.container1 {
 	  width: 100%;  
-	  left: 21%; 
+	  left: 20%; 
 	  background: #fff; } 
 	  
 	.container2 {
@@ -318,19 +331,20 @@ h6 { font-size: .75em; }
 	.content { 
 	  left: 0%;
 	  width: 100%;
-	  padding: 5px 6% 15px;   
+	  padding: 15px 6% 15px;   
 	  border-left: none; } 	
 	   
 	.sidebar-left {	  
 	  left: 0%;
 	  width: 100%;
 	  overflow: hidden;
-	  padding: 15px 3%;
+	  padding: 15px 6%;
 	  background: #ededed; }
 	  
 	.sidebar-right { 
 	  left: 0%;
 	  width: 100%;
+	  padding: 20px 6%;
       background: #ededed; }
 
     .issue {

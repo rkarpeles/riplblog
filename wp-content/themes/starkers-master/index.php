@@ -31,6 +31,10 @@
 					<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
 					<!------------------------------------>
 					
+					<div class="excerpt-thumb">
+						<?php if ( has_post_thumbnail() ) { the_post_thumbnail('excerpt-thumb'); } ?>
+					</div>
+					
 					<div class="excerpt">
 						<?php the_excerpt(); ?>
 					</div>

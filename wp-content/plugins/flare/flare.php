@@ -118,9 +118,7 @@ class Flare {
         // Custom routing
         add_action( 'init', array( &$this, 'route' ) );
         // Output horizontal share bars
-        add_filter( 'the_content', array( &$this, 'the_content' ) );
-		// Output horizontal share bars on the_excerpt
-        add_filter( 'the_excerpt', array( &$this, 'the_excerpt' ) );
+        add_filter( 'the_content', array( &$this, 'the_content' ) );		
         // Add a settings link next to the "Deactivate" link on the plugin listing page
         add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
         // Output vertical share bar
@@ -837,82 +835,7 @@ class Flare {
         return $content;
     }
 	
-	
-	/**
-     * Hook into the the_excerpt filter
-     * 
-     * Output the ShareBar horizontal code in the_excerpt code
-     * 
-     * @global $post;
-     * 
-     * @uses Flare::get_option()
-     * @uses Flare::get()
-     */
-    function the_excerpt( $excerpt ) {
-        global $post;
-        
-        // If Flare shouldn't be here, just return the $content
-        if( !$this->_include_flare() ) {
-            return $excerpt;
-        }
-        
-        $namespace = $this->namespace;
-        $direction = "horizontal";
-        $available_buttons = $this->Button->available_buttons;
-        $buttons = array();
-        $positions = $this->_get_option( 'positions' );
-        $enablecounters = $this->_get_option( 'enablecounters' );
-        $enabletotal = $this->_get_option( 'enabletotal' );
-        $enablehumbleflare = $this->_get_option( 'enablehumbleflare' );
-        $humbleflarecount = $this->_get_option( 'humbleflarecount' );
-        $positions = $this->_get_option( 'positions' );
-        $iconstyle = $this->_get_option( 'iconstyle' );
-        $backgroundcolor = $this->_get_option( 'backgroundcolor' );
-        $buttons = $this->Button->get();
-        
-        $counts = (array) get_post_meta( $post->ID, "_{$this->namespace}_counts", true );
-        $total_count = array_sum( array_values( $counts ) );
-        
-        $classes = array(
-            "{$namespace}-{$direction}",
-            "{$namespace}-backgroundcolor-{$backgroundcolor}"
-        );
-        if( $direction == 'vertical' ) $classes[] = "{$namespace}-{$side}";
-        if( $enablecounters === true ) $classes[] = 'enablecounters';
-        if( $enabletotal === true ) $classes[] = 'enabletotal';
-        if( $enablehumbleflare === true ) $classes[] = 'enablehumbleflare';
-        
-        ob_start();
-            include( FLARE_DIRNAME . "/views/sharebar.php" );
-            $buttons_html .= ob_get_contents();
-        ob_end_clean();
-        
-        $buttons = array();
-        $classes[] = "{$this->namespace}-hidden";
-        ob_start();
-            include( FLARE_DIRNAME . "/views/sharebar.php" );
-            $no_buttons_html .= ob_get_contents();
-        ob_end_clean();
-        
-        if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
-            $position = in_array( 'top', $positions ) ? 'top' : 'top-left';
-            $top_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-			$share_text = '<div class="share-this"><em>Share this:</em></div>';
-            $excerpt = $share_text . $top_buttons_html . $excerpt;
-        } else {
-            $excerpt = $no_buttons_html . $excerpt;
-        }
-    
-        if( in_array( 'bottom', $positions ) || in_array( 'bottom-left', $positions ) ) {
-            $position = in_array( 'bottom', $positions ) ? 'bottom' : 'bottom-left';
-            $bottom_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-			$share_text = '<div class="share-this"><em>Share this:</em></div>';
-            $excerpt = $excerpt . $share_text . $bottom_buttons_html;
-        }
-        
-        return $excerpt;
-    }
-    
+	    
     /**
      * Hook into WordPress wp_print_styles action
      * 

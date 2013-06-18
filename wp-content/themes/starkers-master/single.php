@@ -25,7 +25,7 @@
 			<!--Comments are blocked out for now-->  
 			<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
 			<!------------------------------------>
-			
+						
 			<?php the_content(); ?>	
 
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
