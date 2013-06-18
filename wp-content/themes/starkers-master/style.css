@@ -263,6 +263,9 @@ h6 { font-size: .75em; }
   
 #comments {
   margin-top: 1.5em; }  
+  
+.share-this {
+  margin-bottom: .7em; }
    
 /* Helper Classes
    ======================================================= */
