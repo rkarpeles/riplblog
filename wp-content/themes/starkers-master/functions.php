@@ -144,18 +144,6 @@ if ( function_exists( 'add_image_size' ) ) {
     // in the example: 100px wide, height adjusts automatically, no cropping
 }
 
-// Goes into functions.php file
-// Adds $img content after first paragraph in a post (!.e. after first `</p>` tag)
-/*add_filter('the_content', function($content)
-{
-   $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-   $img = '<img src="'.$url.'" alt="" title=""/>';
-   $div_open = '<div class="content-thumb">';
-   $div_close = '</div>';
-   $content = $div_open . preg_replace('#(<p>)#','$1'.$img, $content, 1) . $div_close;
-   return $content;
-}); */
-
 /* =======================================================
    Excerpt
    ======================================================= */

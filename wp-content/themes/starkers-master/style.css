@@ -117,7 +117,10 @@ hr {
  
 input[type="text"] {
   width: 100%; 
-  max-width: 250px; }
+  max-width: 260px; }
+  
+textarea {
+  width: 100%; }
   
   
 /* =======================================================
@@ -248,8 +251,7 @@ h3 { font-size: 1.17em; }
 h5 { font-size: .83em; }
 h6 { font-size: .75em; } 
 
-.time-date {
-  margin-top: .25em;
+.time-date {  
   margin-bottom: 1em; }
   
 .excerpt {
@@ -259,9 +261,6 @@ h6 { font-size: .75em; }
   
 .excerpt p {
   margin-bottom: .7em; }  
-  
-#comments {
-  margin-top: 1.5em; }  
   
 .share-this {
   margin-bottom: .7em; }
@@ -277,7 +276,24 @@ h6 { font-size: .75em; }
   max-width: 100px;
   border: 4px double #ccc;
   margin: 2px 15px 5px 0; } 
+  
+/**
+ * Comments 
+ */ 
+  
+#comments {
+  border-top: 4px double #dedede;
+  padding-top: 1em; 
+  margin-top: .5em; } 
+  
+#comments li {
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 1.25em;   }
    
+#comments label {
+  width: 100%;
+  display: block; }
+  
 /* Helper Classes
    ======================================================= */
 
@@ -348,7 +364,7 @@ h6 { font-size: .75em; }
     .issue {
 	  display: none; }	  
 	  
-	.footer {
+	footer {
 	  padding: 15px 6%; }
 
 	/*.columns {
@@ -358,15 +374,18 @@ h6 { font-size: .75em; }
 	  width: 100%;
 	  float: none;
 	  margin: 0 0 1.5em 0; } */
-	
+		
 }
 
 @media only screen and (max-width: 500px) {
 
     .wrap {
 	  width: 90%;
-      margin: 15px auto; }
+      margin: 15px auto; }	  
 	  
+	input[type="text"] {
+	  width: 100%; 
+	  max-width: 9999px; }
 }
   
   
