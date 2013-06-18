@@ -25,7 +25,11 @@
 			<!--Comments are blocked out for now-->  
 			<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
 			<!------------------------------------>
-						
+			
+			<span class="content-thumb">
+				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('content-thumb'); } ?>
+			</span>	
+			
 			<?php the_content(); ?>	
 
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>

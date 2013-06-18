@@ -816,14 +816,20 @@ class Flare {
             $no_buttons_html .= ob_get_contents();
         ob_end_clean();
         
-        if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
+        /* Use the code below if you want the share buttons to be at the top */
+		
+		/*
+		if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
             $position = in_array( 'top', $positions ) ? 'top' : 'top-left';
             $top_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
 			$share_text = '<div class="share-this"><em>Share this:</em></div>';
             $content = $share_text . $top_buttons_html . $content;
         } else {
             $content = $no_buttons_html . $content;
-        }
+        } 
+		*/
+		
+		/* Use the code below if you want the share buttons to be at the bottom */
     
         if( in_array( 'bottom', $positions ) || in_array( 'bottom-left', $positions ) ) {
             $position = in_array( 'bottom', $positions ) ? 'bottom' : 'bottom-left';

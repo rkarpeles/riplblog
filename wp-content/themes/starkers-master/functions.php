@@ -139,14 +139,14 @@ if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' 
 
 if ( function_exists( 'add_image_size' ) ) { 
     add_image_size( 'excerpt-thumb', 80, 70, true );
-    add_image_size( 'content-thumb', 100, 85, true );
+    add_image_size( 'content-thumb', 100, 80, true );
     // define excerpt-thumb size here
     // in the example: 100px wide, height adjusts automatically, no cropping
 }
 
 // Goes into functions.php file
 // Adds $img content after first paragraph in a post (!.e. after first `</p>` tag)
-add_filter('the_content', function($content)
+/*add_filter('the_content', function($content)
 {
    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
    $img = '<img src="'.$url.'" alt="" title=""/>';
@@ -154,7 +154,7 @@ add_filter('the_content', function($content)
    $div_close = '</div>';
    $content = $div_open . preg_replace('#(<p>)#','$1'.$img, $content, 1) . $div_close;
    return $content;
-});
+}); */
 
 /* =======================================================
    Excerpt
