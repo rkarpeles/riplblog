@@ -138,8 +138,8 @@ add_action( 'init', 'register_my_menus' );
 if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' );
 
 if ( function_exists( 'add_image_size' ) ) { 
-    add_image_size( 'excerpt-thumb', 0, 65, true );
-    add_image_size( 'content-thumb', 0, 100, true );
+    add_image_size( 'excerpt-thumb', 80, 70, true );
+    add_image_size( 'content-thumb', 100, 85, true );
     // define excerpt-thumb size here
     // in the example: 100px wide, height adjusts automatically, no cropping
 }
