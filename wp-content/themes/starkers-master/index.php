@@ -16,6 +16,10 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
 
 	<div class="content">
+	
+		<div class="slider">
+			<?php echo do_shortcode("[metaslider id=107]"); ?>
+		</div>
 
 		<?php if ( have_posts() ): ?>		
 		<ol>

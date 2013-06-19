@@ -255,9 +255,7 @@ h6 { font-size: .75em; }
   margin-bottom: .75em; }
 
 .post-time-date {  
-  margin-bottom: 1em; 
-  padding-bottom: .75em;
-  border-bottom: 4px double #dedede; }
+  padding-bottom: .25em; }
   
 .excerpt {
   padding-bottom: 1.4em; 
@@ -287,7 +285,7 @@ h6 { font-size: .75em; }
 .comments-section {
   padding-top: 1em;
   margin-top: .25em;
-  border-top: 4px double #dedede; }
+  border-top: 1px solid #dedede; }
     
 #comments li {
   border-bottom: 1px solid #dedede;
@@ -308,6 +306,19 @@ h6 { font-size: .75em; }
   
 .comments-time {
   margin-bottom: .5em; }
+  
+/**
+ * Slider
+ */
+ 
+.slider {  
+  padding-bottom: .5em;
+  margin-bottom: 1em;
+  margin-top: .25em;
+  border-bottom: 4px double #dedede; }
+  
+.slides img {
+  border: none; }
    
 /* Helper Classes
    ======================================================= */
@@ -392,6 +403,13 @@ h6 { font-size: .75em; }
 		
 }
 
+@media only screen and (max-width: 520px) {
+
+	.slider {
+	  display: none; }
+	  
+}
+
 @media only screen and (max-width: 500px) {
 
     .wrap {
@@ -401,6 +419,7 @@ h6 { font-size: .75em; }
 	input[type="text"] {
 	  width: 100%; 
 	  max-width: 9999px; }
+	  
 }
   
   
