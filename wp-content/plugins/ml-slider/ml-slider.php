@@ -562,7 +562,11 @@ class MetaSliderPlugin {
                                         <label for='flex' title='<?php echo $this->get_library_details(2.1, true, 17, true); ?>' class='tipsy-tooltip-top'>FlexSlider</label>
                                         <input class="select-slider" id='flex' rel='flex' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'flex') echo 'checked=checked' ?> value='flex' />
                                     </div>
-                                    <div class='slider-lib responsive'>
+									
+									<!--THE SECTION BELOW IS COMMENTED OUT TO PREVENT USERS FROM CHOOSING OTHER SLIDERS.
+									    UNCOMMENT THE THREE DIVS BELOW TO CHOOSE FROM ALL THE SLIDERS-->
+										
+                                    <!--<div class='slider-lib responsive'>
                                         <label for='responsive' title='<?php echo $this->get_library_details(1.53, true, 3, true); ?>' class='tipsy-tooltip-top'>Responsive</label>
                                         <input class="select-slider" id='responsive' rel='responsive' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'responsive') echo 'checked=checked' ?> value='responsive' />
                                     </div>
@@ -573,7 +577,7 @@ class MetaSliderPlugin {
                                     <div class='slider-lib coin'>
                                         <label for='coin' title='<?php echo $this->get_library_details(1.0, false, 8, true); ?>' class='tipsy-tooltip-top'>CoinSlider</label>
                                         <input class="select-slider" id='coin' rel='coin' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'coin') echo 'checked=checked' ?> value='coin' />
-                                    </div>
+                                    </div>-->
                                 </td>
                             </tr>
                             <tr>
