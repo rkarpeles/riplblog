@@ -132,20 +132,14 @@ textarea {
   position: relative;
   width: 100%;
   right: 60%;  
-  background: #ededed;  
-  -webkit-box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, .1);  
-	 -moz-box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, .1); 
-		  box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, .1); } 
+  background: #ededed; } 
   
 .container2 { /* Reveals the .content section */
   float: left;
   position: relative;  
   width: 100%;
   right: 20%;
-  background: #fff;
-  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1);  
-	 -moz-box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1); 
-		  box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1); }  
+  background: #fff; }  
   
 .container3 { /* Reveals the .sidebar-right */
   float: left;
@@ -195,15 +189,7 @@ header {
   width: 20%;
   left: 80%;
   overflow: hidden;
-  padding: 25px 2.25%; }
-
-#menu-left-sidebar-menu {
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
-  font-weight: 700;
-  font-size: .975em; }  
-  
-#menu-left-sidebar-menu li:first-child {
-  padding-top: 0; }
+  padding: 25px 2.2%; }
   
 .sidebar-right { 
   float: left;
@@ -211,16 +197,15 @@ header {
   width: 20%;
   left: 80%;
   overflow: hidden;
-  padding: 25px 2.25%; } 
-  
+  padding: 25px 2.2%; }
+
 .sidebar ul {
   margin-bottom: 1em; }
 
 .sidebar li {
-  list-style-type: none; }
-  
-.sidebar li {
-  padding: 4px 0; }
+  list-style-type: none;
+  padding: 6px 0;
+  border-bottom: 1px solid #d8d8d8;  }
   
 .sidebar a {
   text-decoration: none; }
@@ -229,6 +214,14 @@ header {
   margin: 0 0 .75em;
   font-size: 1em; }
 
+#menu-left-sidebar-menu {
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+  font-weight: 700;
+  font-size: .975em; }  
+  
+#menu-left-sidebar-menu li:first-child {
+  padding-top: 0; } 
+  
 /* Footer
    ======================================================== */ 
   
@@ -290,6 +283,43 @@ h6 { font-size: .75em; }
   margin: 3px 15px 5px 0; } 
   
 /**
+ * Widgets 
+ */ 
+  
+.widget-title {
+  margin-bottom: 0;
+  padding-bottom: 4px;
+  border-bottom: 4px double #d6d6d6; }
+
+#rss-2 .widget-title a {
+  color: #333; }
+  
+#rss-2 ul {
+  font-size: .875em;
+  line-height: 1.35;
+  margin-bottom: 15px;  }
+  
+#rss-2 li {
+  padding: 6px 0; }
+  
+#rss-2 cite {
+  font-size: .9em;
+  color: #333; }
+
+.rss-date {
+  display: block;
+  color: #333;
+  font-size: .9em;
+  margin-top: 2px; }
+     
+.rsswidget img {
+  display: none; } 
+  
+
+  
+
+ 
+/**
  * Comments 
  */ 
  
@@ -325,7 +355,7 @@ h6 { font-size: .75em; }
 .slider {  
   padding-bottom: .75em;
   margin-bottom: 1em;
-  margin-top: .25em;
+  margin-top: .2em;
   border-bottom: 4px double #dedede; }
   
 .slides img {
