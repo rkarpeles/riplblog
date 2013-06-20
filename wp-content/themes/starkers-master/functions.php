@@ -210,6 +210,5 @@ function guest_author_name( $name ) {
 	return $name;
 } 
 
-
 ?>
 

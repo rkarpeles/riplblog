@@ -19,7 +19,7 @@
 
 			<h1><?php the_title(); ?></h1>
 			<div class="time-date post-time-date">
-				<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+				<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
 			</div>
 			
 			<!--Comments are blocked out for now-->  

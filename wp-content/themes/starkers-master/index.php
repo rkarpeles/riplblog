@@ -28,7 +28,7 @@
 				<article>
 					<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					<div class="time-date">
-						<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+						<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
 					</div>
 					
 					<!--Comments are blocked out for now-->  
