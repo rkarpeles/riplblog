@@ -132,8 +132,10 @@ textarea {
   position: relative;
   width: 100%;
   right: 60%;  
-  background: #ededed;     
-  border-right: 0px solid #939393; } 
+  background: #ededed;  
+  -webkit-box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, .1);  
+	 -moz-box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, .1); 
+		  box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, .1); } 
   
 .container2 { /* Reveals the .content section */
   float: left;
@@ -141,15 +143,16 @@ textarea {
   width: 100%;
   right: 20%;
   background: #fff;
-  border-right: 0px solid #939393;  }  
+  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1);  
+	 -moz-box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1); 
+		  box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1); }  
   
 .container3 { /* Reveals the .sidebar-right */
   float: left;
   position: relative; 
   width: 100%;
   overflow: hidden;
-  background: #ededed;   
-  border-right: 0px solid #939393; }  
+  background: #ededed; }
   
 .wrap {
   width: 80%;
@@ -192,7 +195,7 @@ header {
   width: 20%;
   left: 80%;
   overflow: hidden;
-  padding: 25px 2.15%; }
+  padding: 25px 2.25%; }
 
 #menu-left-sidebar-menu {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
@@ -208,7 +211,7 @@ header {
   width: 20%;
   left: 80%;
   overflow: hidden;
-  padding: 25px 2.15%; } 
+  padding: 25px 2.25%; } 
   
 .sidebar ul {
   margin-bottom: 1em; }
