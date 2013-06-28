@@ -37,6 +37,9 @@
 		</li>
 	<?php endwhile; ?>
 	</ol>
+	<div class="posts-nav">	
+		<?php pagination(); ?>
+	</div>
 
 	<?php else: ?>
 	<h2>No posts to display for <?php echo get_the_author() ; ?></h2>	
