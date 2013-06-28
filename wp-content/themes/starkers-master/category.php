@@ -28,9 +28,12 @@
 					<?php the_excerpt(); ?>
 				</div>
 			</article>
-		</li>
+		</li>		
 	<?php endwhile; ?>
 	</ol>
+	<div class="posts-nav">	
+		<?php pagination(); ?>
+	</div>
 	<?php else: ?>
 	<h2>No posts to display in <?php echo single_cat_title( '', false ); ?></h2>
 	<?php endif; ?>

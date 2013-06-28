@@ -109,10 +109,15 @@ hr {
  
 input[type="text"] {
   width: 100%; 
-  max-width: 260px; }
+  max-width: 260px;
+  padding: 2px 4px;
+  color: #222; }  
   
 textarea {
-  width: 100%; }
+  width: 100%;
+  padding: 2px 4px;
+  color: #222;
+  font-family: Arial, sans-serif; }
   
 #searchform label {
   display: none; }
@@ -306,28 +311,31 @@ h6 { font-size: .75em; }
  * Posts 
  */ 
  
-.posts-nav, .posts-nav-home, .posts-nav-single {
+.posts-nav, .posts-nav-home {
   float: right; }
+  
+.posts-nav a {
+  padding: 3px 7px;
+  margin: 0 1px;  
+  background: #eee;
+  -webkit-border-radius: 2px;
+	 -moz-border-radius: 2px;
+		  border-radius: 2px; }
+		  
+.posts-nav a:hover {
+  background: #ddd;
+  color: #a00; }
+  
+.page-numbers.current {
+  padding: 3px 5px; }
   
 .posts-nav-single {
   width: 100%;
+  float: right;
   text-align: right;
   border-top: 1px solid #dedede;
   margin-top: 5px;
   padding-top: 10px; }
-  
-.posts-nav a {
-  padding: 3px 7px;
-  margin: 0 1px;
-  background: #eee;
-  -webkit-border-radius: 2px;
-	 -moz-border-radius: 2px;
-		  border-radius: 2px; 
-  font-size: .8em; }
-  
-.page-numbers.current {
-  font-size: .8em;
-  margin: 0 4px;  }
  
 /**
  * Comments 
