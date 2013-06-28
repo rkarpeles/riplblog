@@ -17,7 +17,9 @@
 
 	<div class="content">	
 
-		<?php get_template_part('slider'); ?>
+		<div class="slider">
+			<?php echo do_shortcode("[metaslider id=107]"); ?>
+		</div>
 
 		<?php if ( have_posts() ): ?>		
 		<ol>
@@ -49,7 +51,7 @@
 		<?php endif; ?>
 		
 		<div class="posts-nav">
-			<?php posts_nav_link(' &#124; ','&laquo; Newer Posts','Older Posts &raquo;'); ?>
+			<a href="blog">View all posts &raquo;</a>
 		</div>
 
 	</div>

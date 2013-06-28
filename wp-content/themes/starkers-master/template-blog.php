@@ -17,8 +17,8 @@
 				<?php while( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 					<?php get_template_part( 'blog-content', get_post_format() ); ?>
 				<?php endwhile; ?>				
-			<div class="posts-nav">
-				<?php posts_nav_link(' &#124; ','&laquo; Newer Posts','Older Posts &raquo;'); ?>
+			<div class="posts-nav">	
+				<?php pagination(); ?>
 			</div>
 			<?php else : ?>
 				<?php echo ('<h2>Sorry, no posts to display!</h2>'); ?>
