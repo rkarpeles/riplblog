@@ -15,11 +15,9 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
 
-	<div class="content">
-	
-		<div class="slider">
-			<?php echo do_shortcode("[metaslider id=107]"); ?>
-		</div>
+	<div class="content">	
+
+		<?php get_template_part('slider'); ?>
 
 		<?php if ( have_posts() ): ?>		
 		<ol>
@@ -43,12 +41,16 @@
 						<?php the_excerpt(); ?>
 					</div>
 				</article>
-			</li>
+			</li>			
 		<?php endwhile; ?>
 		</ol>
 		<?php else: ?>
 		<h2>No posts to display</h2>
 		<?php endif; ?>
+		
+		<div class="posts-nav">
+			<?php posts_nav_link(' &#124; ','&laquo; Newer Posts','Older Posts &raquo;'); ?>
+		</div>
 
 	</div>
 
