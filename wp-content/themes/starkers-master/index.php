@@ -50,7 +50,7 @@
 		<h2>No posts to display</h2>
 		<?php endif; ?>
 		
-		<div class="posts-nav">
+		<div class="posts-nav-home">
 			<a href="blog">View all posts &raquo;</a>
 		</div>
 

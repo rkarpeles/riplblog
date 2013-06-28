@@ -30,7 +30,7 @@
 				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('content-thumb'); } ?>
 			</span>	
 			
-			<?php the_content(); ?>	
+			<?php the_content(); ?>				
 
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
 			<?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
@@ -40,6 +40,10 @@
 
 			<div class="comments-section">
 				<?php comments_template( '', true ); ?>
+			</div>	
+			
+			<div class="posts-nav-single">
+				<?php previous_post('%','&laquo; Previous Post','no'); ?> | <?php next_post('%','Next Post &raquo','no'); ?>
 			</div>
 
 		</article>
