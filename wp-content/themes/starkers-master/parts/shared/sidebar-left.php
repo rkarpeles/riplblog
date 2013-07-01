@@ -1,8 +1,8 @@
 <div class="sidebar">	
 	<div class="sidebar-left">	
 		<div class="toggle-nav">
-			<div id="show-nav"><a href="#">Toggle Navigation</a></div>
-			<div id="close-nav"><a href="#">X</a></div>
+			<a href="#"><div id="show-nav">Menu</div></a>
+			<a href="#"><div id="close-nav">Close (X)</div></a>
 		</div>
 		<ul>
 			<?php 

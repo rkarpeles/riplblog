@@ -498,12 +498,24 @@ h6 { font-size: .75em; }
    
 .toggle-nav {
   display: none; }
+  
+#nav_menu-2 {
+  display: block; }
 
 #show-nav {
-  display: none; }
+  display: none;
+  background: #a00;
+  color: #fff;
+  padding: 8px 15px;
+  font-weight: bold; }
   
 #close-nav {
   display: none;
+  background: #a00;
+  color: #fff;
+  padding: 8px 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
   text-align: right; }
  
 
