@@ -1,6 +1,6 @@
 <!--Background Image-->
 <div class="background">
-	<img src="http://localhost/riplblog/wp-content/themes/starkers-master/images/bg-large.jpg" alt="">		
+	<img src="http://localhost/riplblog/wp-content/themes/starkers-master/images/bg-large.jpg">	
 </div>
 		
 <!--Begin Wrap-->
