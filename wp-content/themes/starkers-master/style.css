@@ -596,6 +596,9 @@ h6 { font-size: .75em; }
 	  width: 100%;
 	  padding: 20px 6%;
       background: #ededed; }
+	  
+	.slider {
+	  margin-top: .3em; }
 
     .issue {
 	  display: none; }	 
@@ -661,18 +664,14 @@ h6 { font-size: .75em; }
 		
 }
 
-@media only screen and (max-width: 640px) {  
+@media only screen and (max-width: 600px) {   
 
- body {
-	  background: url('images/grey_wash_wall.png') repeat; }
+	body {
+	  background: url('images/tweed.png') repeat; }
 	  
 	.background, .background img {
 	   display: none; }
 	   
-}
-
-@media only screen and (max-width: 600px) {   
-
 	.slider {
 	  display: none; }
 	  

@@ -34,6 +34,10 @@
 	<?php else: ?>
 	<h2>No results found for '<?php echo get_search_query(); ?>'</h2>
 	<?php endif; ?>
+	
+	<div class="posts-nav">	
+		<?php pagination(); ?>
+	</div>
 
 </div>
 
