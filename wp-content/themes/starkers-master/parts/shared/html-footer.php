@@ -1,14 +1,18 @@
 	<?php wp_footer(); ?>		
 	<script>
-		jQuery('#show-nav').click(function () {
-			jQuery('#nav_menu-2').toggle('slow');
-			jQuery('#close-nav').show();
-			jQuery('#show-nav').hide();
-		});
-		jQuery('#close-nav').click(function () {
-			jQuery('#nav_menu-2').toggle('slow');
-			jQuery('#close-nav').hide();
-			jQuery('#show-nav').fadeIn('slow');
+		 jQuery('#toggle-nav').click(function () {
+			 var nav = jQuery('#nav_menu-2');
+			 if(nav.hasClass('showing')){
+				 nav.removeClass('showing').addClass('hiding');
+			 }else{
+				 nav.removeClass('hiding').addClass('showing');
+			 }
+		 });
+		jQuery(window).resize(function(){
+			var winwidth = jQuery(window).innerWidth();
+			if(winwidth > 780){
+				jQuery('#nav_menu-2').removeClass('showing').removeClass('hiding');    
+			}
 		});
 	</script>
 	</body>

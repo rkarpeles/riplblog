@@ -204,9 +204,7 @@ textarea {
   font-size: 13px; }
 		  
 #search-3 {
-  border-top: 3px solid #d8d8d8;
-  padding-top: 10px; 
-  margin-top: 25px; }
+  padding-top: 5px; }
   
   
 /* =======================================================
@@ -385,7 +383,7 @@ h6 { font-size: .75em; }
   float: right; }
   
 .posts-nav a {
-  padding: 3px 7px;
+  padding: 4px 7px;
   margin: 0 2px;  
   background: #ededed;
   -webkit-border-radius: 2px;
@@ -493,31 +491,15 @@ h6 { font-size: .75em; }
 .bot-mar-6 { margin-bottom: 1.5em; }
 .bot-mar-7 { margin-bottom: 2em; } 
 
-/* Menu
+/* Responsive Nav Menu
    ======================================================= */  
    
-.toggle-nav {
-  display: none; }
+#toggle-nav {
+  display: none; } 
   
 #nav_menu-2 {
-  display: block; }
-
-#show-nav {
-  display: none;
-  background: #a00;
-  color: #fff;
-  padding: 8px 15px;
-  font-weight: bold; }
-  
-#close-nav {
-  display: none;
-  background: #a00;
-  color: #fff;
-  padding: 8px 15px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  text-align: right; }
- 
+  display: block; 
+  overflow: hidden; }
 
 /* =======================================================
    4.0 $Responsive
@@ -536,17 +518,8 @@ h6 { font-size: .75em; }
   
 @media only screen and (max-width: 780px) {
 
-	.toggle-nav {
-	  display: block; }
-  
-    #nav_menu-2 {
-	  display: none; }
-	
-	#show-nav {
-	  display: block; }	
-	
 	.wrap {
-	  margin: 20px auto; }
+	  margin: 20px auto; }	 
 	
 	.container1 {
 	  width: 100%;  
@@ -599,6 +572,24 @@ h6 { font-size: .75em; }
 	  width: 100%;
 	  float: none;
 	  margin: 0 0 1.5em 0; } */
+	  
+	/**
+	 * Responsive Nav Menu
+	 */
+	 
+	#toggle-nav {
+	  display: block;
+      margin-bottom: 15px;
+      cursor: pointer; }
+
+	#nav_menu-2 {
+	  height: 0; }
+	  
+	#nav_menu-2.showing {        
+        height: auto; }
+		
+    #nav_menu-2.hiding {        
+        height: 0; } 
 		
 }
 
