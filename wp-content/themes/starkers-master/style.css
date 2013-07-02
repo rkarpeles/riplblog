@@ -228,7 +228,7 @@ header {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
   font-weight: 700;
   font-size: .975em; } 
-  
+
 #menu-left-sidebar-menu li:first-child {
   padding-top: 0; } 
   
@@ -651,6 +651,13 @@ h6 { font-size: .75em; }
 		
     #nav_menu-2.hiding {        
       height: 0; } 
+	  
+	#menu-left-sidebar-menu li {
+      padding: 0; }
+
+    #menu-left-sidebar-menu li a { /* allows entire list item to be clickable */
+      display: block;
+      padding: 6px 0; }
 		
 }
 
