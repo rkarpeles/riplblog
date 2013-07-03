@@ -125,11 +125,6 @@ textarea {
 #searchsubmit {
   margin-top: 8px;
   font-size: .85em; }
-		  
-.search-wrap {
-  margin: 0 0 10px; 
-  padding: 15px 0 20px;
-  border-top: 3px solid #d8d8d8; }
   
   
 /* =======================================================
@@ -238,6 +233,9 @@ header {
 /**
  * Current Issue
  */
+ 
+.current-issue {
+  padding-top: 20px; }
  
 .current-issue .widget-title {
   border-bottom: none;
@@ -617,16 +615,17 @@ h6 { font-size: .75em; }
 	  margin-top: .3em; }
 
     .issue {
-	  display: none; }	 
+	  display: none; }	
+
+    .search-wrap {
+	  padding-top: 15px; 
+	  border-top: 3px solid #d8d8d8; }
 	
 	.search-wrap.widget-title {
 	  display: none; } 
 	  
 	.search-form h4 {
-      display: none; }	
-	
-	.current-issue {
-	  display: none; }
+      display: none; }		
 	  
 	.search-form input[type="text"] {
        display: block;
@@ -643,6 +642,9 @@ h6 { font-size: .75em; }
 	  top: -8px;	  
 	  width: 18.5%;	  
       padding: 5px 1.5%; }
+	  
+	.current-issue {
+	  display: none; }
 	  
 	footer {
 	  padding: 15px 6%; }
