@@ -237,7 +237,7 @@ header {
 .current-issue {
   padding-top: 20px; }
  
-.current-issue .widget-title {
+.current-issue.widget-title {
   border-bottom: none;
   padding-bottom: 5px; }
   
