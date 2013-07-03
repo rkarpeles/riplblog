@@ -111,7 +111,7 @@ input[type="text"] {
   width: 100%; 
   max-width: 260px;
   padding: 2px 4px;
-  color: #222; }  
+  color: #444; }  
   
 textarea {
   width: 100%;
@@ -119,18 +119,17 @@ textarea {
   color: #222;
   font-family: Arial, sans-serif; }
   
-#searchform label {
+.search-form label {
   display: none; }
 	
 #searchsubmit {
   margin-top: 8px;
   font-size: .85em; }
 		  
-#search-3 {
-  border-top: 4px double #d8d8d8;
-  border-bottom: 4px double #d8d8d8;
-  padding: 10px 0 15px;
-  margin: 10px 0 15px; }
+.search-wrap {
+  margin: 0 0 10px; 
+  padding: 15px 0 20px;
+  border-top: 3px solid #d8d8d8; }
   
   
 /* =======================================================
@@ -224,6 +223,9 @@ header {
 .sidebar h2 {
   margin: 0 0 .75em;
   font-size: 1em; }
+  
+.sidebar-left ul {
+  margin-bottom: 10px; }
 
 #menu-left-sidebar-menu {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
@@ -237,11 +239,14 @@ header {
  * Current Issue
  */
  
-#text-2 .widget-title {
+.current-issue .widget-title {
   border-bottom: none;
-  padding-bottom: 8px;  }
+  padding-bottom: 5px; }
   
-.current-issue { }  
+.current-read-more {
+  padding-top: 6px;
+  font-size: .85em;
+  font-weight: 700; }
   
 /* Footer
    ======================================================== */ 
@@ -599,7 +604,7 @@ h6 { font-size: .75em; }
 	  left: 0%;
 	  width: 100%;
 	  overflow: hidden;
-	  padding: 15px 6%;
+	  padding: 15px 6% 10px;
 	  background: #ededed; }
 	  
 	.sidebar-right { 
@@ -614,11 +619,14 @@ h6 { font-size: .75em; }
     .issue {
 	  display: none; }	 
 	
-	#search-3 .widget-title {
+	.search-wrap.widget-title {
 	  display: none; } 
-
-    .search-form {
-	  margin-top: 5px; }	  
+	  
+	.search-form h4 {
+      display: none; }	
+	
+	.current-issue {
+	  display: none; }
 	  
 	.search-form input[type="text"] {
        display: block;
