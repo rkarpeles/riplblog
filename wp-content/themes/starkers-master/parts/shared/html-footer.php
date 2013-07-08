@@ -1,4 +1,4 @@
-	<?php wp_footer(); ?>		
+	<?php wp_footer(); ?>
 	<script>
 		 jQuery('#toggle-nav').click(function () {
 			 var nav = jQuery('#nav_menu-2');

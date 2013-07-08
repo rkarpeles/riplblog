@@ -5,7 +5,7 @@ Description: 	The totally stark Wordpress theme!
 Version: 		4.0
 Author: 		Elliot Jay Stocks & Keir Whitaker
 Author URI: 	http://viewportindustries.com
-Tags: 			starkers, naked, clean, basic
+Tags: 			starkers, clean, basic
 */
 
 
@@ -235,11 +235,17 @@ header {
    ======================================================== */ 
   
 footer {
-  padding: 14px 2.5%; /* Left & right padding same as sidebar */
   width: 100%;
+  overflow: auto; /* Allows nested floating divs to be contained */
+  padding: 14px 2.1%; /* Left & right padding same as sidebar */
   background: #1c1c1c;
   color: #fff;
   clear: both; } 
+  
+.footer-menu {
+  float: left;   
+  width: 75%;
+  margin-right: 5%; }
   
 .footer-menu li {
   display: inline-block;
@@ -253,6 +259,21 @@ footer {
 .footer-menu a:hover, .footer-menu a:active {
   text-decoration: underline; }
   
+.icon-links {
+  float: right;
+  width: 20%;
+  text-align: right;
+  font-family: 'icomoon';
+  font-size: 1.1em; }
+  
+.icon-links-list {
+  text-align: right: }
+  
+.icon-links a {
+  display: inline-block; }
+  
+.mail-icon {
+  }
   
 /* =======================================================
    3.0 $Theme
@@ -266,6 +287,61 @@ h2 { font-size: 1.3em; margin-bottom: .5em; }
 h3 { font-size: 1.17em; }
 h5 { font-size: .83em; }
 h6 { font-size: .75em; } 
+
+/* Icon Fonts
+   ======================================================= */
+   
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-facebook, .icon-twitter, .icon-feed, .icon-mail {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-facebook:before {
+	content: "\e000";
+}
+.icon-twitter:before {
+	content: "\e001";
+}
+.icon-feed:before {
+	content: "\e002";
+}
+.icon-mail:before {
+	content: "\e003";
+}
  
 /**
  * Widgets 
@@ -648,6 +724,20 @@ h6 { font-size: .75em; }
 	  
 	footer {
 	  padding: 15px 6%; }
+	  
+	.footer-menu {
+	  width: 100%;
+      margin-right: 0; }
+
+    .footer-menu li {
+	  display: block;
+	  padding: 2px 0; }	  
+	  
+	.icon-links {
+      float: left;
+      width: 100%;
+      text-align: left;
+      margin-top: 10px; }
 
 	/*.columns {
 	  margin-bottom: 0; }
