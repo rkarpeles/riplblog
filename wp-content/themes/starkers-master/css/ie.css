@@ -1,13 +1,33 @@
-.lt-ie9 .flex-direction-nav .flex-next { background-position: 100% 0; right: 5px; }
-.lt-ie9 .flex-direction-nav .flex-prev { left: 5px;}
+.lt-ie9 .flex-direction-nav .flex-next { 
+  background-position: 100% 0; 
+  right: 5px; }
+  
+.lt-ie9 .flex-direction-nav .flex-prev { 
+  left: 5px;}
 
-.ie .icon-links a {
+.lt-ie9 .icon-links a, .ie9 .icon-links a {
   margin-left: 5px; }
+  
+/**
+ * Target IE10 because it no longer uses conditional comments 
+ * Based on this article by Chris Coyier: http://css-tricks.com/ie-10-specific-styles/
+ */
+html[data-useragent*='MSIE 10.0'] .icon-links a {
+  margin-left: 5px; }
+  
+  
+/* ======================================================= 
+   Responsive Styles
+   ======================================================= */
   
 @media only screen and (max-width: 780px) {	
 
-	.ie .icon-links a {
+	.lt-ie9 .icon-links a, .ie9 .icon-links a {
 	  margin-left: 0; 
 	  margin-right: 5px; }
+	  
+	html[data-useragent*='MSIE 10.0'] .icon-links a {
+      margin-left: 0;
+      margin-right: 5px; }
   
 }

@@ -272,7 +272,7 @@ footer {
 
 /* Background 
    ======================================================= */
-  
+   
 .background {
   position: fixed; 
   z-index: -100;
@@ -289,11 +289,7 @@ footer {
   bottom: 0; 
   margin: auto; 
   min-width: 50%;
-  min-height: 50%; }   
-
-.show-desktop { display: none; }
-.show-desktop { display: none; }
-.show-desktop { display: none; }
+  min-height: 50%; } 
    
 /* Typography
    ======================================================= */  
