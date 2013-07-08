@@ -7,9 +7,7 @@
 
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-
-	<div class="content">		
-		
+	<div class="content">			
 		<?php $args = array( 'posts_per_page' => get_option( 'posts_per_page' ), 'paged' => max( 1, get_query_var( 'paged' ) ) ); ?>			
 			<?php global $wp_query, $wp_the_query; ?>
 			<?php $wp_query = new WP_Query( $args ); ?>
@@ -25,7 +23,5 @@
 			<?php endif; ?>
 			<?php wp_reset_postdata(); ?>
 			<?php $wp_query = $wp_the_query; ?>
-
 	</div>
-
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>

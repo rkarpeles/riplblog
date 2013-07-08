@@ -230,4 +230,3 @@ if ( ! function_exists( 'pagination' ) ) :
 endif;
 
 ?>
-

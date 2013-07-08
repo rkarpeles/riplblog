@@ -53,24 +53,6 @@ body {
   line-height: 1.4;
   background: #e5e5e5; }
   
-.background {
-  position: fixed; 
-  z-index: -100;
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%; }
-  
-.background img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%; }
-  
 p {
   margin: 0 0 1.25em 0; }
   
@@ -264,7 +246,7 @@ footer {
   float: right;
   width: 20%;
   text-align: right;
-  padding-top: 5px;
+  padding-top: 3px;
   font-family: 'icomoon';
   font-size: 1.3em; }
   
@@ -273,11 +255,45 @@ footer {
   
 .icon-links a {
   display: inline-block;
-  color: #eee;  }
+  color: #eee; }
+
+.icon-links a:hover, .icon-links a:active {
+  color: #aaa; }
   
+@-moz-document url-prefix() { /* Targets Firefox only */
+  .icon-links a {
+     margin-left: -8px;
+  }
+}
+
 /* =======================================================
    3.0 $Theme
-   ======================================================= */     
+   ======================================================= */ 
+
+/* Background 
+   ======================================================= */
+  
+.background {
+  position: fixed; 
+  z-index: -100;
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%; }
+  
+.background img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%; }   
+
+.show-desktop { display: none; }
+.show-desktop { display: none; }
+.show-desktop { display: none; }
    
 /* Typography
    ======================================================= */  
@@ -731,21 +747,23 @@ you can use the generic selector below, but it's slower:
 
     .footer-menu li {
 	  display: block;
-	  padding: 2px 0; }	  
+	  padding: 4px 0; }	  
 	  
 	.icon-links {
       float: left;
       width: 100%;
       text-align: left;
-      margin-top: 10px; }
-
-	/*.columns {
-	  margin-bottom: 0; }
-
-	.one-half, .one-third, .two-thirds, .two-forths, .one-forth, .two-thirds-right, .one-third-left {
-	  width: 100%;
-	  float: none;
-	  margin: 0 0 1.5em 0; } */
+      margin-top: 8px; }
+	  
+	.icon-links a {
+	  padding-right: 5px; }
+	  
+	@-moz-document url-prefix() { /* Targets Firefox only */
+	  .icon-links a {
+		 margin-left: 0;
+		 margin-right: -8px;
+	  }
+	}
 	  
 	/**
 	 * Responsive Nav Menu

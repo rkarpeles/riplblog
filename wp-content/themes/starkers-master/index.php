@@ -14,13 +14,10 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-
 	<div class="content">	
-
 		<div class="slider">
 			<?php echo do_shortcode("[metaslider id=107]"); ?>
 		</div>
-
 		<?php if ( have_posts() ): ?>		
 		<ol>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -29,16 +26,10 @@
 					<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					<div class="time-date">
 						<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
-					</div>
-					
-					<!--Comments are blocked out for now-->  
-					<!--<?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>-->
-					<!------------------------------------>
-					
+					</div>					
 					<div class="excerpt-thumb">
 						<?php if ( has_post_thumbnail() ) { the_post_thumbnail('excerpt-thumb'); } ?>
-					</div>
-					
+					</div>					
 					<div class="excerpt">
 						<?php the_excerpt(); ?>
 					</div>
@@ -48,12 +39,9 @@
 		</ol>
 		<?php else: ?>
 		<h2>No posts to display</h2>
-		<?php endif; ?>
-		
+		<?php endif; ?>		
 		<div class="posts-nav-home">
 			<a href="blog">View all posts &raquo;</a>
 		</div>
-
 	</div>
-
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>

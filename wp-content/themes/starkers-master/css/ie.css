@@ -2,12 +2,12 @@
 .lt-ie9 .flex-direction-nav .flex-prev { left: 5px;}
 
 .ie .icon-links a {
-  margin-left: 4px; }
+  margin-left: 5px; }
   
 @media only screen and (max-width: 780px) {	
 
 	.ie .icon-links a {
 	  margin-left: 0; 
-	  margin-right: 4px; }
+	  margin-right: 5px; }
   
 }

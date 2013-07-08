@@ -12,12 +12,13 @@
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico"/>		
-		<!--[if IE ]>
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico"/>	
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/picturefill.min.js"></script> 		
+		<!--[if IE]>
 		    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ie.css">
 			<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv.js"></script> 
 			<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv-printshiv.js"></script> 
-		<![endif]-->
+		<![endif]-->		
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>

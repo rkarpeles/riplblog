@@ -10,9 +10,7 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-
 <div class="content">
-
 	<?php if ( have_posts() ): ?>
 	<h2>Tag Archive: <?php echo single_tag_title( '', false ); ?></h2>
 	<ol>
@@ -37,7 +35,5 @@
 	<?php else: ?>
 	<h2>No posts to display in <?php echo single_tag_title( '', false ); ?></h2>
 	<?php endif; ?>
-
 </div>
-
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>

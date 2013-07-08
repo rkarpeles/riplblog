@@ -10,9 +10,7 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-
 <div class="content">
-
 	<?php if ( have_posts() ): ?>
 	<h2>Search Results for '<?php echo get_search_query(); ?>'</h2>	
 	<ol>
@@ -33,12 +31,9 @@
 	</ol>
 	<?php else: ?>
 	<h2>No results found for '<?php echo get_search_query(); ?>'</h2>
-	<?php endif; ?>
-	
+	<?php endif; ?>	
 	<div class="posts-nav">	
 		<?php pagination(); ?>
 	</div>
-
 </div>
-
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>
