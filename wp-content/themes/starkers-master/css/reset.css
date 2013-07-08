@@ -50,6 +50,9 @@ html {
   -webkit-text-size-adjust: 100%; 
   -ms-text-size-adjust: 100%; }
 
+html, html a {
+    -webkit-font-smoothing: antialiased; }
+
 body { 
   margin: 0;
   overflow: auto; /* fixes scrolling in IE when using 'overflow: auto' on other elements */ }

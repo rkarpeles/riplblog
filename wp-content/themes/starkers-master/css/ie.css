@@ -1,0 +1,13 @@
+.lt-ie9 .flex-direction-nav .flex-next { background-position: 100% 0; right: 5px; }
+.lt-ie9 .flex-direction-nav .flex-prev { left: 5px;}
+
+.ie .icon-links a {
+  margin-left: 4px; }
+  
+@media only screen and (max-width: 780px) {	
+
+	.ie .icon-links a {
+	  margin-left: 0; 
+	  margin-right: 4px; }
+  
+}

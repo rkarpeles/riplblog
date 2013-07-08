@@ -237,6 +237,7 @@ header {
 footer {
   width: 100%;
   overflow: auto; /* Allows nested floating divs to be contained */
+  zoom: 1;
   padding: 14px 2.1%; /* Left & right padding same as sidebar */
   background: #1c1c1c;
   color: #fff;
@@ -263,17 +264,16 @@ footer {
   float: right;
   width: 20%;
   text-align: right;
+  padding-top: 5px;
   font-family: 'icomoon';
-  font-size: 1.1em; }
+  font-size: 1.3em; }
   
 .icon-links-list {
   text-align: right: }
   
 .icon-links a {
-  display: inline-block; }
-  
-.mail-icon {
-  }
+  display: inline-block;
+  color: #eee;  }
   
 /* =======================================================
    3.0 $Theme
@@ -295,9 +295,9 @@ h6 { font-size: .75em; }
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot');
 	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
 		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
+		url('fonts/icomoon.ttf') format('truetype');	
 	font-weight: normal;
 	font-style: normal;
 }
