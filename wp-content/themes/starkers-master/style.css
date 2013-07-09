@@ -197,10 +197,6 @@ header {
 .sidebar a {
   text-decoration: none; }
   
-.sidebar h2 {
-  margin: 0 0 .75em;
-  font-size: 1em; }
-  
 .sidebar ul {
   margin-bottom: 16px; }
   
@@ -732,7 +728,7 @@ you can use the generic selector below, but it's slower:
 	.search-wrap.widget-title {
 	  display: none; } 
 	  
-	.search-form h4 {
+	.search-form .widget-title {
       display: none; }		
 	  
 	.search-form input[type="text"] {
