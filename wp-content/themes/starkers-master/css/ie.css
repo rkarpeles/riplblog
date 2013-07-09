@@ -6,15 +6,7 @@
   left: 5px;}
 
 .lt-ie9 .icon-links a, .ie9 .icon-links a {
-  margin-left: 5px; }
-  
-/**
- * Target IE10 because it no longer uses conditional comments 
- * Based on this article by Chris Coyier: http://css-tricks.com/ie-10-specific-styles/
- */
-html[data-useragent*='MSIE 10.0'] .icon-links a {
-  margin-left: 5px; }
-  
+  margin-left: 5px; }  
   
 /* ======================================================= 
    Responsive Styles

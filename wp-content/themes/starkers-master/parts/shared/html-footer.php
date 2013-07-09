@@ -15,5 +15,10 @@
 			}
 		});
 	</script>
+	<!-- Adds the 'User Agent' to the <html> element to target certain browsers for style purposes -->
+	<script>
+		var doc = document.documentElement;
+		doc.setAttribute('data-useragent', navigator.userAgent);
+	</script>
 	</body>
 </html>

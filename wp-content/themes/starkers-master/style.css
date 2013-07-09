@@ -263,7 +263,18 @@ footer {
 .icon-links a:hover, .icon-links a:active {
   color: #aaa; }
   
-@-moz-document url-prefix() { /* Targets Firefox only */
+/**
+ * Target IE10 because it no longer uses conditional comments 
+ * Based on this article by Chris Coyier: http://css-tricks.com/ie-10-specific-styles/
+ */
+
+html[data-useragent*='MSIE 10.0'] .icon-links a {
+  margin-left: 5px; }
+  
+/** 
+ * Target Firefox only 
+ */
+@-moz-document url-prefix() { 
   .icon-links a {
      margin-left: -8px;
   }
@@ -763,6 +774,20 @@ you can use the generic selector below, but it's slower:
 	.icon-links a {
 	  padding-right: 5px; }
 	  
+	/**
+	 * Target IE10 because it no longer uses conditional comments 
+	 * Based on this article by Chris Coyier: http://css-tricks.com/ie-10-specific-styles/
+	 */
+	 
+	html[data-useragent*='MSIE 10.0'] .icon-links a {
+	  margin-left: 0;
+      margin-right: 5px; }  
+	
+	  
+	/**
+	 * Target Firefox only 
+	 */		  
+	 
 	@-moz-document url-prefix() { /* Targets Firefox only */
 	  .icon-links a {
 		 margin-left: 0;
