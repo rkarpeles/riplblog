@@ -562,8 +562,8 @@ class MetaSliderPlugin {
                                     <div class='slider-lib flex'>
                                         <label for='flex' title='<?php echo $this->get_library_details(2.1, true, 17, true); ?>' class='tipsy-tooltip-top'>FlexSlider</label>
                                         <input class="select-slider" id='flex' rel='flex' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'flex') echo 'checked=checked' ?> value='flex' />
-                                    </div>                                    
-                                </td>
+                                    </div>
+								</td>
                             </tr>
                             <tr>
                                 <td width='40%' class='tipsy-tooltip' title="<?php _e("Set the initial size for the slides (width x height)", 'metaslider') ?>">
