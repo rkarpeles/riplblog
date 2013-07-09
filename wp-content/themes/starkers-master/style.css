@@ -316,61 +316,34 @@ h6 { font-size: .75em; }
   padding-bottom: .25em;
   font-size: 1.6em;
   border-bottom: 1px solid #dedede; }
-
+  
+.page-id-18 .page-heading { /* Center text for Editorial Board page */
+  text-align: center; }
 
 /* Icon Fonts
    ======================================================= */
    
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.svg#icomoon') format('svg'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype');	
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+  	url('fonts/icomoon.svg#icomoon') format('svg'),
+  	url('fonts/icomoon.woff') format('woff'),
+  	url('fonts/icomoon.ttf') format('truetype');	
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'icomoon';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-.icon-facebook, .icon-twitter, .icon-feed, .icon-mail {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-.icon-facebook:before {
-	content: "\e000";
-}
-.icon-twitter:before {
-	content: "\e001";
-}
-.icon-feed:before {
-	content: "\e002";
-}
-.icon-mail:before {
-	content: "\e003";
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
   
 /**
