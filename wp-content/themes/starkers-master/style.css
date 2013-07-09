@@ -461,6 +461,13 @@ you can use the generic selector below, but it's slower:
 .slides img {
   border: none; }  
   
+.slides .caption a {
+  color: #aaa;
+  text-decoration: none; }
+  
+.slides .caption a:hover {
+  text-decoration: underline; }
+  
 /**
  * Current Issue
  */

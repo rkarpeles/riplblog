@@ -30,7 +30,7 @@
     bottom: 0;
     left: 0;
     background: rgb(0, 0, 0); /* The Fallback */
-	background: rgba(0, 0, 0, 0.75); 
+	background: rgba(0, 0, 0, 0.8); 
     color: white;
     line-height: 30px;
     margin: 0;
