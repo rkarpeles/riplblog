@@ -1,6 +1,6 @@
 <!--Background Image-->
 <div class="background">
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bg-large.jpg">
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bg-large.jpg" alt="">
 </div>
 		
 <!--Begin Wrap-->

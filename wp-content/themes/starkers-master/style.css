@@ -151,7 +151,7 @@ textarea {
 header {
   position: relative;
   z-index: 100; /* Keeps logo above wrap overlap */
-  margin-bottom: 0px; /* Removes spacing beneath header; */ }
+  margin-bottom: 0; /* Removes spacing beneath header; */ }
   
 .logo { /* For the H1 class in the header */
   margin-bottom: 0; }
@@ -186,13 +186,13 @@ header {
   overflow: hidden;
   padding: 25px 2.1%; }
 
-.sidebar ul {
-  margin-bottom: 1em; }
-
 .sidebar li {
   list-style-type: none;
   padding: 6px 0;
   border-bottom: 1px solid #d8d8d8; }
+
+.sidebar li:first-child {
+  border-top: 1px solid #d8d8d8; }
   
 .sidebar a {
   text-decoration: none; }
@@ -201,8 +201,11 @@ header {
   margin: 0 0 .75em;
   font-size: 1em; }
   
-.sidebar-left ul {
-  margin-bottom: 10px; }
+.sidebar ul {
+  margin-bottom: 16px; }
+  
+.widget-title {
+  border-bottom: none; }
 
 #menu-left-sidebar-menu {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
@@ -210,8 +213,11 @@ header {
   font-size: .975em; } 
 
 #menu-left-sidebar-menu li:first-child {
+  border-top: none;
   padding-top: 0; } 
-
+  
+.search-wrap {
+  margin: 10px 0 15px; }
   
 /* Footer
    ======================================================== */ 
@@ -248,10 +254,7 @@ footer {
   text-align: right;
   padding-top: 3px;
   font-family: 'icomoon';
-  font-size: 1.3em; }
-  
-.icon-links-list {
-  text-align: right: }
+  font-size: 1.3em; }  
   
 .icon-links a {
   display: inline-block;
@@ -361,16 +364,14 @@ you can use the generic selector below, but it's slower:
   
 .widget-title {
   margin-bottom: 0;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #d8d8d8; }
+  padding-bottom: 4px; }
 
 #rss-2 .widget-title a {
   color: #333; }
   
 #rss-2 ul {
   font-size: .875em;
-  line-height: 1.35;
-  margin-bottom: 15px;  }
+  line-height: 1.35; }
   
 #rss-2 li {
   padding: 6px 0; }
@@ -681,20 +682,20 @@ you can use the generic selector below, but it's slower:
 	  border: none; } 	  
 	  
 	.content { 
-	  left: 0%;
+	  left: 0;
 	  width: 100%;
 	  padding: 15px 6% 15px;   
 	  border-left: none; } 	
 	   
 	.sidebar-left {	  
-	  left: 0%;
+	  left: 0;
 	  width: 100%;
 	  overflow: hidden;
 	  padding: 15px 6% 10px;
 	  background: #ededed; }
 	  
 	.sidebar-right { 
-	  left: 0%;
+	  left: 0;
 	  width: 100%;
 	  padding: 20px 6%;
       background: #ededed; }
@@ -706,7 +707,8 @@ you can use the generic selector below, but it's slower:
 	  display: none; }	
 
     .search-wrap {
-	  padding-top: 15px; 
+	  margin: 5px 0 0;
+	  padding-top: 12px; 
 	  border-top: 3px solid #d8d8d8; }
 	
 	.search-wrap.widget-title {
