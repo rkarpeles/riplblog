@@ -11,8 +11,7 @@
 }
 
 .metaslider .caption {
-    line-height: 1.35;
-	padding: 9px 14px;
+    padding: 5px 10px;
 }
 
 .metaslider img {
@@ -29,10 +28,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgb(0, 0, 0); /* The Fallback */
-    background: rgba(0, 0, 0, 0.75); 
+    background: black;
     color: white;
     line-height: 30px;
+    opacity: 0.7;
     margin: 0;
     display: block;
     width: 100%;

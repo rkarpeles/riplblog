@@ -73,6 +73,14 @@ When it all boils down to it, Flare is just HTML and CSS. We try to place the Fl
 Unfortunately we cannot check the size of the content inside the social widgets themselves as they are in IFRAME tags. We set the IFRAME tag dimensions to work pretty well for most situations, but sometimes, they need to be wider. As mentioned in the previous FAQ though, you can always write a line or two of CSS in your theme's style.css file to change the width of the bubbles.
 
 == Changelog ==
+= 1.2.3 =
+* Load all social code via JavaScript instead of on-page code to improve load time
+* Updated some admin links
+* Added Powered by Filament badge
+* Updated total Flares to only show totals of current sharing button types
+* Added check in the_content() filter to restrict output if get_the_excerpt() is being called
+* Better handling of Pinterest count retrieval
+
 = 1.2.2 =
 * Fix for handling display issue with Pinterest iFrame causing spacing issues below footer
 

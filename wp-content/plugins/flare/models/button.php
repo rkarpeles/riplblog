@@ -582,7 +582,28 @@ class Flare_Model {
         }
         
         if( !is_wp_error( $response ) ) {
-            $response_json = json_decode( preg_replace( "/^\(|\)$/", "", $response['body'] ) );
+            // Trim the response - no likey white space
+            $response_body = trim( $response['body'] );
+            
+            // Split the response into an array - watah!
+            $response_body_parts = str_split( $response_body );
+            
+            // If the last element is a ) pop it off
+            if( end( $response_body_parts ) == ')' )
+                array_pop( $response_body_parts );
+            
+            // Reverse order of array and check if the last(first) element is a ( and pop it off
+            $response_body_parts = array_reverse( $response_body_parts );
+            if( end( $response_body_parts ) == '(' )
+                array_pop( $response_body_parts );
+            
+            // Set back to normal
+            $response_body_parts = array_reverse( $response_body_parts );
+            
+            // Convert back to string
+            $response_body = implode( '', $response_body_parts );
+            
+            $response_json = json_decode( $response_body );
             
             if( isset( $response_json->count ) ) {
                 $count = (int) $response_json->count;

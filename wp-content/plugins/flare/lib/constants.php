@@ -26,7 +26,7 @@ along with SlideDeck.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 // Plugin Version
-if( !defined( 'FLARE_VERSION' ) ) define( 'FLARE_VERSION', "1.2.2" );
+if( !defined( 'FLARE_VERSION' ) ) define( 'FLARE_VERSION', "1.2.3" );
 
 // Environment - change to "development" to load .dev.js JavaScript files (DON'T FORGET TO TURN IT BACK BEFORE USING IN PRODUCTION)
 if( !defined( 'FLARE_ENVIRONMENT' ) ) define( 'FLARE_ENVIRONMENT', 'production' );

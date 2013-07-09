@@ -3,7 +3,7 @@
  * Plugin Name: Meta Slider
  * Plugin URI: http://www.metaslider.com
  * Description: 4 sliders in 1! Choose from Nivo Slider, Flex Slider, Coin Slider or Responsive Slides.
- * Version: 2.1.5
+ * Version: 2.1.6
  * Author: Matcha Labs
  * Author URI: http://www.matchalabs.com
  * License: GPLv2 or later
@@ -14,7 +14,7 @@
  * GNU General Public License for more details.
  */
 
-define('METASLIDER_VERSION', '2.1.5');
+define('METASLIDER_VERSION', '2.1.6');
 define('METASLIDER_BASE_URL', plugin_dir_url(__FILE__));
 define('METASLIDER_ASSETS_URL', METASLIDER_BASE_URL . 'assets/');
 define('METASLIDER_BASE_DIR_LONG', dirname(__FILE__));
@@ -253,7 +253,7 @@ class MetaSliderPlugin {
     /**
      * 
      */
-    public function help_tab () {
+    public function help_tab() {
         $screen = get_current_screen();
 
         // documentation tab
@@ -419,6 +419,7 @@ class MetaSliderPlugin {
      */
     private function find_slider($orderby, $order) {
         $args = array(
+            'force_no_custom_order' => true,
             'post_type' => 'ml-slider',
             'num_posts' => 1,
             'post_status' => 'publish',
@@ -562,11 +563,7 @@ class MetaSliderPlugin {
                                         <label for='flex' title='<?php echo $this->get_library_details(2.1, true, 17, true); ?>' class='tipsy-tooltip-top'>FlexSlider</label>
                                         <input class="select-slider" id='flex' rel='flex' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'flex') echo 'checked=checked' ?> value='flex' />
                                     </div>
-									
-									<!--THE SECTION BELOW IS COMMENTED OUT TO PREVENT USERS FROM CHOOSING OTHER SLIDERS.
-									    UNCOMMENT THE THREE DIVS BELOW TO CHOOSE FROM ALL THE SLIDERS-->
-										
-                                    <!--<div class='slider-lib responsive'>
+                                    <div class='slider-lib responsive'>
                                         <label for='responsive' title='<?php echo $this->get_library_details(1.53, true, 3, true); ?>' class='tipsy-tooltip-top'>Responsive</label>
                                         <input class="select-slider" id='responsive' rel='responsive' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'responsive') echo 'checked=checked' ?> value='responsive' />
                                     </div>
@@ -577,7 +574,7 @@ class MetaSliderPlugin {
                                     <div class='slider-lib coin'>
                                         <label for='coin' title='<?php echo $this->get_library_details(1.0, false, 8, true); ?>' class='tipsy-tooltip-top'>CoinSlider</label>
                                         <input class="select-slider" id='coin' rel='coin' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'coin') echo 'checked=checked' ?> value='coin' />
-                                    </div>-->
+                                    </div>
                                 </td>
                             </tr>
                             <tr>

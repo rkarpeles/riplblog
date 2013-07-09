@@ -3,7 +3,7 @@
 Plugin Name: Flare
 Plugin URI: http://www.dtelepathy.com/
 Description: Flare is a simple yet eye-catching social sharing bar that gets you followed and lets your content get shared via posts, pages, and media types.
-Version: 1.2.2
+Version: 1.2.3
 Author: dtelepathy
 Author URI: http://www.dtelepathy.com/
 Contributors: kynatro, dtelepathy, moonspired, nielsfogt, dtlabs
@@ -118,7 +118,7 @@ class Flare {
         // Custom routing
         add_action( 'init', array( &$this, 'route' ) );
         // Output horizontal share bars
-        add_filter( 'the_content', array( &$this, 'the_content' ) );		
+        add_filter( 'the_content', array( &$this, 'the_content' ) );
         // Add a settings link next to the "Deactivate" link on the plugin listing page
         add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
         // Output vertical share bar
@@ -392,7 +392,7 @@ class Flare {
         );
         
         // Link to dt.Labs Products
-        add_submenu_page( FLARE_BASENAME, 'dt.Labs', 'More dt.Labs Products', 'update_plugins', FLARE_BASENAME . '/dtlabs', array( &$this, 'admin_options_page' ) );
+        add_submenu_page( FLARE_BASENAME, 'Filament', 'See More Products', 'update_plugins', FLARE_BASENAME . '/filament', array( &$this, 'admin_options_page' ) );
         
         // Add print scripts and styles action based off the option page hook
         foreach( $this->menu_hooks as &$menu_hook ) {
@@ -632,8 +632,9 @@ class Flare {
         $url = $_REQUEST['url'];
         $post_id = $_REQUEST['post_id'];
         $counts = array();
+        $buttons = $this->Button->get();
         
-        foreach( $this->Button->available_buttons as $button ) {
+        foreach( $buttons as $button ) {
             $counts[$button['type']] = $this->Button->get_count( $button['type'], $url );
         }
         
@@ -753,8 +754,8 @@ class Flare {
             }
         }
 
-        if( preg_match( "/admin\.php\?.*page\=" . FLARE_BASENAME . "\/dtlabs/", $uri ) ) {
-            wp_redirect( "http://www.dtelepathy.com/labs/" );
+        if( preg_match( "/admin\.php\?.*page\=" . FLARE_BASENAME . "\/filament/", $uri ) ) {
+            wp_redirect( "https://filament.io/applications/flare?utm_source=flare_wp&utm_medium=deployment&utm_content=admin&utm_campaign=filament" );
             exit ;
         }
     }
@@ -772,6 +773,9 @@ class Flare {
      */
     function the_content( $content ) {
         global $post;
+        
+        // If get_the_excerpt is being run, then just give them the $content.
+        if( in_array( 'get_the_excerpt', $GLOBALS['wp_current_filter'] ) ) return $content;
         
         // If Flare shouldn't be here, just return the $content
         if( !$this->_include_flare() ) {
@@ -793,6 +797,7 @@ class Flare {
         $buttons = $this->Button->get();
         
         $counts = (array) get_post_meta( $post->ID, "_{$this->namespace}_counts", true );
+        
         $total_count = array_sum( array_values( $counts ) );
         
         $classes = array(
@@ -816,32 +821,23 @@ class Flare {
             $no_buttons_html .= ob_get_contents();
         ob_end_clean();
         
-        /* Use the code below if you want the share buttons to be at the top */
-		
-		/*
-		if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
+        if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
             $position = in_array( 'top', $positions ) ? 'top' : 'top-left';
             $top_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-			$share_text = '<div class="share-this"><em>Share this:</em></div>';
-            $content = $share_text . $top_buttons_html . $content;
+            $content = $top_buttons_html . $content;
         } else {
             $content = $no_buttons_html . $content;
-        } 
-		*/
-		
-		/* Use the code below if you want the share buttons to be at the bottom */
+        }
     
         if( in_array( 'bottom', $positions ) || in_array( 'bottom-left', $positions ) ) {
             $position = in_array( 'bottom', $positions ) ? 'bottom' : 'bottom-left';
             $bottom_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-			$share_text = '<div class="share-this"><em>Share this:</em></div>';
-            $content = $content . $share_text . $bottom_buttons_html;
+            $content = $content . $bottom_buttons_html;
         }
         
         return $content;
     }
-	
-	    
+    
     /**
      * Hook into WordPress wp_print_styles action
      * 

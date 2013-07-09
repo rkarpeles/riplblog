@@ -246,6 +246,11 @@
                     });
                 });
             }
+
+            elems.horizontal.add(elems.vertical).find('.' + ns + '-iframe-wrapper').each(function(){
+                var $this = $(this);
+                $this.html($this.data('code-snippet'));
+            });
             
             getCounts();
         }

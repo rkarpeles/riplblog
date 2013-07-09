@@ -28,7 +28,7 @@
                 }
                 
                 if(!$code){
-                    $code = $this.closest('.button-row').find('.button-mode-config.button-mode-code');;
+                    $code = $this.closest('.button-row').find('.button-mode-config.button-mode-code');
                     $.data(this, '$code', $code);
                 }
                 
@@ -206,7 +206,8 @@
                 if(self.originalSerialize != self.elems.form.serialize()){
                     return "You have unsaved changes. Are you sure you want to leave without saving?";
                 }
-            }
+            };
+            
             // Un-bind safety fallback when we're submitting the form for saving
             this.elems.form.bind('submit', function(){
                 window.onbeforeunload = null;
