@@ -462,7 +462,7 @@ you can use the generic selector below, but it's slower:
   border: none; }  
   
 .slides .caption a {
-  color: #aaa;
+  color: #ccc;
   text-decoration: none; }
   
 .slides .caption a:hover {
