@@ -317,13 +317,13 @@ h6 { font-size: .75em; }
   font-size: 1.6em;
   border-bottom: 1px solid #dedede; }
   
-.page-id-18 { /* Center text for Editorial Board page */
+.page-id-18 .content { /* Center text for Editorial Board page */
   text-align: center; }
   
-.page-id-18 p { /* Center text for Editorial Board page */
+.page-id-18 .content p { /* Center text for Editorial Board page */
   font-size: .85em; }
  
-.page-id-18 p em {
+.page-id-18 .content p em {
   font-size: .9em; }
 
 /* Icon Fonts
