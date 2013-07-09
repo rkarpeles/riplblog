@@ -15,10 +15,12 @@
 			}
 		});
 	</script>
-	<!-- Adds the 'User Agent' to the <html> element to target certain browsers for style purposes -->
+	<!-- Adds the 'User Agent' to the <html> element to target certain browsers for styling purposes -->
 	<script>
 		var doc = document.documentElement;
 		doc.setAttribute('data-useragent', navigator.userAgent);
 	</script>
+	<!-- Google Analytics Tracking -->
+	<?php include_once('analyticstracking.php'); ?>
 	</body>
 </html>

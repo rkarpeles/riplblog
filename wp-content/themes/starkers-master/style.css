@@ -306,9 +306,17 @@ html[data-useragent*='MSIE 10.0'] .icon-links a {
 
 h1 { font-size: 1.5em; }
 h2 { font-size: 1.3em; margin-bottom: .5em; }
-h3 { font-size: 1.17em; }
+h3 { font-size: 1.17em; margin-bottom: .5em; }
+h4 { font-size: 1em; margin-bottom: .75em; }
 h5 { font-size: .83em; }
 h6 { font-size: .75em; } 
+
+.page-heading {
+  margin-bottom: .5em;
+  padding-bottom: .25em;
+  font-size: 1.6em;
+  border-bottom: 1px solid #dedede; }
+
 
 /* Icon Fonts
    ======================================================= */
@@ -364,6 +372,26 @@ you can use the generic selector below, but it's slower:
 .icon-mail:before {
 	content: "\e003";
 }
+  
+/**
+ * Slider
+ */
+ 
+.slider {  
+  padding-bottom: .75em;
+  margin-bottom: 1em;
+  margin-top: .2em;
+  border-bottom: 4px double #dedede; }
+  
+.slides img {
+  border: none; }  
+  
+.slides .caption a {
+  color: #ccc;
+  text-decoration: none; }
+  
+.slides .caption a:hover {
+  text-decoration: underline; }
  
 /**
  * Widgets 
@@ -454,43 +482,7 @@ you can use the generic selector below, but it's slower:
   
 .comments-time {
   margin-bottom: .5em; }
-  
-/**
- * Slider
- */
- 
-.slider {  
-  padding-bottom: .75em;
-  margin-bottom: 1em;
-  margin-top: .2em;
-  border-bottom: 4px double #dedede; }
-  
-.slides img {
-  border: none; }  
-  
-.slides .caption a {
-  color: #ccc;
-  text-decoration: none; }
-  
-.slides .caption a:hover {
-  text-decoration: underline; }
-  
-/**
- * Current Issue
- */
- 
-.current-issue {
-  padding-top: 20px; }
- 
-.current-issue.widget-title {
-  border-bottom: none;
-  padding-bottom: 5px; }
-  
-.current-read-more {
-  padding-top: 6px;
-  font-size: .85em;
-  font-weight: 700; }
-  
+
 /**
  * Buttons
  */
@@ -602,7 +594,31 @@ you can use the generic selector below, but it's slower:
 #searchsubmit:active,
 #submit:active {
   position: relative;
-  bottom: -1px; }
+  bottom: -1px; }  
+  
+/**
+ * Current Issue
+ */
+ 
+.current-issue {
+  padding-top: 20px; }
+ 
+.current-issue.widget-title {
+  border-bottom: none;
+  padding-bottom: 5px; }
+  
+.current-read-more {
+  padding-top: 6px;
+  font-size: .85em;
+  font-weight: 700; }
+  
+/**
+ * Archives Page
+ */
+ 
+.archive-list li {
+  margin-left: 1.5em;
+  list-style-type: disc; }
      
 /**
  * Miscellaneous 
@@ -634,7 +650,6 @@ you can use the generic selector below, but it's slower:
   float: left;  
   border: 4px double #ccc;
   margin: 3px 15px 5px 0; } 
-
    
 /* Helper Classes
    ======================================================= */

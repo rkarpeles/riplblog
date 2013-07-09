@@ -7,7 +7,8 @@
 
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-	<div class="content">			
+	<div class="content">
+		<h1 class="page-heading"><?php the_title(); ?></h1>
 		<?php $args = array( 'posts_per_page' => get_option( 'posts_per_page' ), 'paged' => max( 1, get_query_var( 'paged' ) ) ); ?>			
 			<?php global $wp_query, $wp_the_query; ?>
 			<?php $wp_query = new WP_Query( $args ); ?>
