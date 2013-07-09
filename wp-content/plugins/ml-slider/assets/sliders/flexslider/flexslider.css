@@ -87,8 +87,9 @@ html[xmlns] .slides {display: block;}
 }
 
 .flex-control-nav {
-	bottom: -30px;
 	line-height: 11px;
+	height: 40px;
+	padding: 20px 0 0;
 }
 
 

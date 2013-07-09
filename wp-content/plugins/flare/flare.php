@@ -824,7 +824,8 @@ class Flare {
         if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
             $position = in_array( 'top', $positions ) ? 'top' : 'top-left';
             $top_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-            $content = $top_buttons_html . $content;
+			$share_text = '<div class="share-this"><em>Share this:</em></div>';
+			$content = $share_text . $top_buttons_html . $content;
         } else {
             $content = $no_buttons_html . $content;
         }
@@ -832,7 +833,8 @@ class Flare {
         if( in_array( 'bottom', $positions ) || in_array( 'bottom-left', $positions ) ) {
             $position = in_array( 'bottom', $positions ) ? 'bottom' : 'bottom-left';
             $bottom_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-            $content = $content . $bottom_buttons_html;
+			$share_text = '<div class="share-this"><em>Share this:</em></div>';
+			$content = $content . $share_text . $bottom_buttons_html;
         }
         
         return $content;

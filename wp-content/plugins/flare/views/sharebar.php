@@ -25,27 +25,7 @@
             <span class="<?php echo $namespace; ?>-iframe-wrapper" data-code-snippet="<?php echo esc_attr( flare_code_snippet( $button['type'], $direction, false ) ); ?>"></span>
         </span>
         
-    <?php endforeach; ?>
-    
-    <?php
-     /**
-      * Powered By Filament Icon
-      */
-    ?>
-    <span data-type="filament" class="<?php echo $namespace; ?>-button button-type-filament <?php echo $namespace; ?>-iconstyle-<?php echo $iconstyle; ?> last" style="background-color:#9848b5;z-index:<?php echo count( $buttons ) - $counter; ?>">
-        <span class="<?php echo $namespace; ?>-button-wrap">
-            <span class="<?php echo $namespace; ?>-button-icon">Filament.io</span>
-        </span>
-    </span>
-    <span class="<?php echo $namespace; ?>-button-count">--</span>
-        
-    <span class="<?php echo $namespace; ?>-flyout <?php echo $namespace; ?>-flyout-filament">
-        <span class="<?php echo $namespace; ?>-flyout-inner">
-            <span class="<?php echo $namespace; ?>-arrow"></span>
-        </span>
-        <span class="<?php echo $namespace; ?>-iframe-wrapper" data-code-snippet='<a href="https://filament.io/applications/flare?utm_source=flare_wp&utm_medium=deployment&utm_content=flarebar&utm_campaign=filament" title="Powered by Filament.io" target="_blank"><strong>Filament</strong> Ideas to Inventions <span>More Apps</span></a>'></span>
-    </span>
-    
+    <?php endforeach; ?>   
 
     <span class="<?php echo "{$namespace}-total"; ?> last"><strong><?php echo flare_formatted_count( $total_count ); ?></strong> Flares</span>
 
