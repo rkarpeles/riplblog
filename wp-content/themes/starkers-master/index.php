@@ -18,25 +18,21 @@
 		<div class="slider">
 			<?php echo do_shortcode("[metaslider id=107]"); ?>
 		</div>
-		<?php if ( have_posts() ): ?>		
-		<ol>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<li>
-				<article>
-					<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-					<div class="time-date">
-						<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
-					</div>					
-					<div class="excerpt-thumb">
-						<?php if ( has_post_thumbnail() ) { the_post_thumbnail('excerpt-thumb'); } ?>
-					</div>					
-					<div class="excerpt">
-						<?php the_excerpt(); ?>
-					</div>
-				</article>
-			</li>			
-		<?php endwhile; ?>
-		</ol>
+		<?php if ( have_posts() ): ?>			
+		<?php while ( have_posts() ) : the_post(); ?>			
+			<article>
+				<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<div class="time-date">
+					<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+				</div>					
+				<div class="excerpt-thumb">
+					<?php if ( has_post_thumbnail() ) { the_post_thumbnail('excerpt-thumb'); } ?>
+				</div>					
+				<div class="excerpt">
+					<?php the_excerpt(); ?>
+				</div>
+			</article>						
+		<?php endwhile; ?>		
 		<?php else: ?>
 		<h2>No posts to display</h2>
 		<?php endif; ?>		

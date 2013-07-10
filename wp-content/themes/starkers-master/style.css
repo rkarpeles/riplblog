@@ -304,12 +304,12 @@ html[data-useragent*='MSIE 10.0'] .icon-links a {
 /* Typography
    ======================================================= */  
 
-h1 { font-size: 1.5em; }
-h2 { font-size: 1.3em; margin-bottom: .5em; }
-h3 { font-size: 1.17em; margin-bottom: .5em; }
-h4 { font-size: 1em; margin-bottom: .75em; }
-h5 { font-size: .83em; }
-h6 { font-size: .75em; } 
+h1, .alpha { font-size: 1.5em; }
+h2, .beta { font-size: 1.3em; margin-top: .5em; margin-bottom: .75em;  }
+h3, .gamma { font-size: 1.17em; margin-top: .5em; margin-bottom: .75em; }
+h4, .delta { font-size: 1em; margin-bottom: .75em; }
+h5, .epsilon { font-size: .83em; }
+h6, .zeta { font-size: .75em; } 
 
 .page-heading {
   margin-bottom: .5em;
@@ -325,7 +325,11 @@ h6 { font-size: .75em; }
  
 .page-id-18 .content p em {
   font-size: .9em; }
-
+  
+.page-id-18 .content h4 {
+  margin-top: .5em;
+  margin-bottom: 1em; }
+  
 /* Icon Fonts
    ======================================================= */
    
@@ -432,6 +436,17 @@ h6 { font-size: .75em; }
   border-top: 1px solid #dedede;
   margin-top: 5px;
   padding-top: 10px; }
+  
+/**
+ * Pages
+ */ 
+ 
+.content ul {
+  margin: 0 0 1.25em 1.5em; } 
+ 
+.content li {
+  list-style: disc; 
+  padding: 4px 0; }
  
 /**
  * Comments 
@@ -610,7 +625,7 @@ h6 { font-size: .75em; }
   padding-bottom: .25em; }
   
 .excerpt {
-  padding-bottom: 1.4em; 
+  padding-bottom: 1.3em; 
   margin-bottom: 1.2em;
   border-bottom: 1px solid #dedede; }
   
