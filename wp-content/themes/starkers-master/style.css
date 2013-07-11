@@ -175,16 +175,16 @@ header {
   position: relative;
   width: 20%;
   left: 80%;
-  overflow: hidden;
-  padding: 25px 2.1%; }
+  padding: 25px 2.1%; /* Left and Right padding must be same as L/R padding on footer */
+  overflow: hidden; }
   
 .sidebar-right { 
   float: left;
   position: relative;
   width: 20%;
   left: 80%;
-  overflow: hidden;
-  padding: 25px 2.1%; }
+  padding: 25px 2.1%; /* Left and Right padding must be same as L/R padding on footer */
+  overflow: hidden; }
 
 .sidebar li {
   list-style-type: none;
@@ -217,9 +217,9 @@ header {
   
 footer {
   width: 100%;
-  overflow: auto; /* Allows nested floating divs to be contained */
+  overflow: auto; /* Cause footer to contain nested floating divs */
   zoom: 1;
-  padding: 14px 2.1%; /* Left & right padding same as sidebar */
+  padding: 14px 2.1%; /* Left and Right padding must be same as L/R padding on .sidebar-left and .sidebar-right */
   background: #1c1c1c;
   color: #fff;
   clear: both; } 
@@ -257,7 +257,7 @@ footer {
   color: #aaa; }
   
 /**
- * Target IE10 because it no longer uses conditional comments 
+ * Target IE10 without conditional comments, which it doesn't support.
  * Based on this article by Chris Coyier: http://css-tricks.com/ie-10-specific-styles/
  */
 
@@ -673,7 +673,7 @@ textarea {
   
   
 /* =======================================================
-   4.0 $Responsive
+   4.0 $Responsive 
    ======================================================= */   
    
 /* Max Queries
@@ -793,7 +793,7 @@ textarea {
 	 * Target Firefox only 
 	 */		  
 	 
-	@-moz-document url-prefix() { /* Target Firefox only */
+	@-moz-document url-prefix() { 
 	  .icon-links a {
 		 margin-left: 0;
 		 margin-right: -8px;
