@@ -13,22 +13,18 @@
 <div class="content">
 	<?php if ( have_posts() ): ?>
 	<h2>Tag Archive: <?php echo single_tag_title( '', false ); ?></h2>
-	<ol>
-	<?php while ( have_posts() ) : the_post(); ?>
-		<li>
-			<article>
-				<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-				<div class="time-date">
-					<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
-				</div>
-				
-				<div class="excerpt">
-					<?php the_excerpt(); ?>
-				</div>
-			</article>
-		</li>
-	<?php endwhile; ?>
-	</ol>
+	<?php while ( have_posts() ) : the_post(); ?>	
+		<article>
+			<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<div class="time-date">
+				<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+			</div>
+			
+			<div class="excerpt">
+				<?php the_excerpt(); ?>
+			</div>
+		</article>		
+	<?php endwhile; ?>	
 	<div class="posts-nav">	
 		<?php pagination(); ?>
 	</div>

@@ -10,16 +10,33 @@ Tags: 			starkers, clean, basic
 
 
 /* 
-============================  
+==========================================================
 TABLE OF CONTENTS:
-
+==========================================================
 0.0 - Sensible defaults 
 1.0 - Base
 2.0 - Layout
+		- Header
+		- Content
+		- Sidebars
+		- Footer
 3.0 - Theme
+		- Typography
+		- Icon Fonts
+		- Background 
+		- Forms
+		- Buttons
+		- Slider
+		- Widgets
+		- Posts
+		- Pages
+		- Comments
+		- Archives Page 
+		- Miscellaneous 
+		- Helper Classes
+		- Responsive Nav Menu
 4.0 - Responsive 
-
-============================
+==========================================================
 */
 
 
@@ -41,7 +58,12 @@ TABLE OF CONTENTS:
    1.0 $Base
    ======================================================= */
    
-* { /* Preserves box model regardless of padding, margins, etc. */
+/**
+ * Preserve box model regardless of padding, margins, etc. More info here: 
+ * http://css-tricks.com/box-sizing/ 
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/ 
+ */
+* {	 
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box; }
@@ -86,48 +108,26 @@ hr {
 .clearfix {  
   *zoom: 1; /* For IE 6/7 only */ } 
   
-/* Forms
-   ======================================================== */ 
- 
-input[type="text"] {
-  width: 100%; 
-  max-width: 260px;
-  padding: 2px 4px;
-  color: #444; }  
-  
-textarea {
-  width: 100%;
-  padding: 2px 4px;
-  color: #222;
-  font-family: Arial, sans-serif; }
-  
-.search-form label {
-  display: none; }
-	
-#searchsubmit {
-  margin-top: 7px;
-  font-size: .85em; }
-  
   
 /* =======================================================
    2.0 $Layout
    ======================================================= */
   
-.container1 { /* Reveals the .sidebar-left */
+.container1 { /* Reveal the .sidebar-left */
   float: left;
   position: relative;
   width: 100%;
   right: 60%;  
   background: #ededed; } 
   
-.container2 { /* Reveals the .content section */
+.container2 { /* Reveal the .content section */
   float: left;
   position: relative;  
   width: 100%;
   right: 20%;
   background: #fff; }  
   
-.container3 { /* Reveals the .sidebar-right */
+.container3 { /* Reveal the .sidebar-right */
   float: left;
   position: relative; 
   width: 100%;
@@ -150,10 +150,10 @@ textarea {
   
 header {
   position: relative;
-  z-index: 100; /* Keeps logo above wrap overlap */
-  margin-bottom: 0; /* Removes spacing beneath header; */ }
+  z-index: 100; /* Keep logo above wrap overlap */
+  margin-bottom: 0; /* Remove spacing beneath header; */ }
   
-.logo { /* For the H1 class in the header */
+.logo { /* For H1 class in header */
   margin-bottom: 0; }
   
 /* Content
@@ -199,9 +199,6 @@ header {
   
 .sidebar ul {
   margin-bottom: 16px; }
-  
-.widget-title {
-  border-bottom: none; }
 
 #menu-left-sidebar-menu {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
@@ -279,56 +276,22 @@ html[data-useragent*='MSIE 10.0'] .icon-links a {
 /* =======================================================
    3.0 $Theme
    ======================================================= */ 
-
-/* Background 
-   ======================================================= */
-   
-.background {
-  position: fixed; 
-  z-index: -100;
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%; }
-  
-.background img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%; } 
    
 /* Typography
    ======================================================= */  
 
-h1, .alpha { font-size: 1.5em; }
-h2, .beta { font-size: 1.3em; margin-top: .5em; margin-bottom: .75em;  }
-h3, .gamma { font-size: 1.17em; margin-top: .5em; margin-bottom: .75em; }
-h4, .delta { font-size: 1em; margin-bottom: .75em; }
+h1, .alpha   { font-size: 1.5em; }
+h2, .beta    { font-size: 1.3em; margin-top: .5em; margin-bottom: .75em;  }
+h3, .gamma   { font-size: 1.17em; margin-top: .5em; margin-bottom: .75em; }
+h4, .delta   { font-size: 1em; margin-bottom: .75em; }
 h5, .epsilon { font-size: .83em; }
-h6, .zeta { font-size: .75em; } 
+h6, .zeta 	 { font-size: .75em; } 
 
 .page-heading {
   margin-bottom: .5em;
   padding-bottom: .25em;
   font-size: 1.65em;
   border-bottom: 1px solid #dedede; }
-  
-.page-id-18 .content { /* Center text for Editorial Board page */
-  text-align: center; }
-  
-.page-id-18 .content p { /* Center text for Editorial Board page */
-  font-size: .85em; }
- 
-.page-id-18 .content p em {
-  font-size: .9em; }
-  
-.page-id-18 .content h4 {
-  margin-top: .5em;
-  margin-bottom: 1em; }
   
 /* Icon Fonts
    ======================================================= */
@@ -355,127 +318,54 @@ h6, .zeta { font-size: .75em; }
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
-  
-/**
- * Slider
- */
- 
-.slider {  
-  padding-bottom: .75em;
-  margin-bottom: 1em;
-  margin-top: .2em;
-  border-bottom: 4px double #dedede; }
-  
-.slides img {
-  border: none; }  
-  
-.slides .caption a {
-  color: #ccc;
-  text-decoration: none; }
-  
-.slides .caption a:hover {
-  text-decoration: underline; }
+
+/* Background 
+   ======================================================= */
  
 /**
- * Widgets 
- */ 
-  
-.widget-title {
-  margin-bottom: 0;
-  padding-bottom: 4px; }
-
-#rss-2 .widget-title a {
-  color: #333; }
-  
-#rss-2 ul {
-  font-size: .875em;
-  line-height: 1.35; }
-  
-#rss-2 li {
-  padding: 6px 0; }
-  
-#rss-2 cite {
-  font-size: .9em;
-  color: #333; }
-
-.rss-date {
-  display: block;
-  color: #333;
-  font-size: .9em;
-  margin-top: 2px; }
-     
-.rsswidget img {
-  display: none; } 
-  
-/**
- * Posts 
+ * Based on article here (using "CSS-Only Technique #2"): 
+ * http://css-tricks.com/perfect-full-page-background-image/
  */ 
  
-.posts-nav, .posts-nav-home {
-  float: right; }
+.background {
+  position: fixed; 
+  z-index: -100;
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%; }
   
-.posts-nav a {
-  padding: 4px 7px;
-  margin: 0 2px;  
-  background: #ededed;
-  -webkit-border-radius: 2px;
-	 -moz-border-radius: 2px;
-		  border-radius: 2px; }
-		  
-.posts-nav a:hover {
-  background: #ddd;
-  color: #a00; }
+.background img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%; } 
   
-.page-numbers.current {
-  padding: 3px 5px; }
+/* Forms
+   ======================================================== */ 
+ 
+input[type="text"] {
+  width: 100%; 
+  max-width: 260px;
+  padding: 2px 4px;
+  color: #444; }  
   
-.posts-nav-single {
+textarea {
   width: 100%;
-  float: right;
-  text-align: right;
-  border-top: 1px solid #dedede;
-  margin-top: 5px;
-  padding-top: 10px; }
+  padding: 2px 4px;
+  color: #222;
+  font-family: Arial, sans-serif; }
   
-/**
- * Pages
- */ 
- 
-.content ul {
-  margin: 0 0 1.25em 1.5em; } 
- 
-.content li {
-  list-style: disc; 
-  padding: 4px 0; }
- 
-/**
- * Comments 
- */ 
- 
-.comments-section {
-  padding-top: 1em;
-  margin-top: .25em;
-  border-top: 1px solid #dedede; }
-    
-#comments li {
-  border-bottom: 1px solid #dedede;
-  margin-bottom: 1.25em; }
-   
-#comments label {
-  width: 100%;
-  display: block; }
-
-#comments img {
-  float: left;
-  margin-right: 15px; }
-  
-.comments-number {
-  padding-bottom: 1em;
-  margin-bottom: 1.25em;
-  border-bottom: 1px solid #dedede; }
-  
-.comments-time {
-  margin-bottom: .5em; }
+.search-form label {
+  display: none; }
+	
+#searchsubmit {
+  margin-top: 7px;
+  font-size: .85em; }
 
 /**
  * Buttons
@@ -588,23 +478,100 @@ h6, .zeta { font-size: .75em; }
 #searchsubmit:active,
 #submit:active {
   position: relative;
-  bottom: -1px; }  
+  bottom: -1px; } 
   
 /**
- * Current Issue
+ * Slider
  */
  
-.current-issue {
-  padding-top: 20px; }
- 
-.current-issue.widget-title {
-  border-bottom: none;
-  padding-bottom: 5px; }
+.slider {  
+  padding-bottom: .75em;
+  margin-bottom: 1em;
+  margin-top: .2em;
+  border-bottom: 4px double #dedede; }
   
-.current-read-more {
-  padding-top: 6px;
-  font-size: .85em;
-  font-weight: 700; }
+.slides img {
+  border: none; }  
+  
+.slides .caption a {
+  color: #ccc;
+  text-decoration: none; }
+  
+.slides .caption a:hover {
+  text-decoration: underline; }
+ 
+/**
+ * Widgets 
+ */ 
+  
+.widget-title {
+  margin-bottom: 0;
+  padding-bottom: 4px;
+  border-bottom: none; }
+
+#rss-2 .widget-title a {
+  color: #333; }
+  
+#rss-2 ul {
+  font-size: .875em;
+  line-height: 1.35; }
+  
+#rss-2 li {
+  padding: 6px 0; }
+  
+#rss-2 cite {
+  font-size: .9em;
+  color: #333; }
+
+.rss-date {
+  display: block;
+  color: #333;
+  font-size: .9em;
+  margin-top: 2px; }
+     
+.rsswidget img {
+  display: none; } 
+  
+/**
+ * Posts 
+ */ 
+ 
+.posts-nav, .posts-nav-home {
+  float: right; }
+  
+.posts-nav a {
+  padding: 4px 7px;
+  margin: 0 2px;  
+  background: #ededed;
+  -webkit-border-radius: 2px;
+	 -moz-border-radius: 2px;
+		  border-radius: 2px; }
+		  
+.posts-nav a:hover {
+  background: #ddd;
+  color: #a00; }
+  
+.page-numbers.current {
+  padding: 3px 5px; }
+  
+.posts-nav-single {
+  width: 100%;
+  float: right;
+  text-align: right;
+  border-top: 1px solid #dedede;
+  margin-top: 5px;
+  padding-top: 10px; }
+  
+/**
+ * Pages
+ */ 
+ 
+.content ul {
+  margin: 0 0 1.25em 1.5em; } 
+ 
+.content li {
+  list-style: disc; 
+  padding: 4px 0; }
   
 /**
  * Archives Page
@@ -613,7 +580,41 @@ h6, .zeta { font-size: .75em; }
 .archive-list li {
   margin-left: 1.5em;
   list-style-type: disc; }
-     
+ 
+/**
+ * Comments 
+ */ 
+ 
+.comments-section {
+  padding-top: 1em;
+  margin-top: .25em;
+  border-top: 1px solid #dedede; }
+    
+#comments li {
+  border-bottom: 1px solid #dedede;
+  list-style-type: none;
+  margin-bottom: 1.25em; }
+  
+#comments h4 {
+  font-size: 1.1em;
+  margin-bottom: .15em; }
+   
+#comments label {
+  width: 100%;
+  display: block; }
+
+#comments img {
+  float: left;
+  margin-right: 15px; }
+  
+.comments-number {
+  padding-bottom: 1em;
+  margin-bottom: 1.25em;
+  border-bottom: 1px solid #dedede; }
+  
+.comments-time {
+  margin-bottom: .5em; } 
+       
 /**
  * Miscellaneous 
  */ 
@@ -645,8 +646,9 @@ h6, .zeta { font-size: .75em; }
   border: 4px double #ccc;
   margin: 3px 15px 5px 0; } 
    
-/* Helper Classes
-   ======================================================= */
+/**
+ * Helper Classes
+ */  
 
 .bot-mar-0 { margin-bottom: 0; }
 .bot-mar-1 { margin-bottom: .25em; }
@@ -657,8 +659,9 @@ h6, .zeta { font-size: .75em; }
 .bot-mar-6 { margin-bottom: 1.5em; }
 .bot-mar-7 { margin-bottom: 2em; } 
 
-/* Responsive Nav Menu
-   ======================================================= */  
+/**
+ * Responsive Nav Menu
+ */
    
 #toggle-nav {
   display: none;
@@ -756,9 +759,6 @@ h6, .zeta { font-size: .75em; }
 	  width: 18.5%;	  
       padding: 5px 1.5%; }
 	  
-	.current-issue {
-	  display: none; }
-	  
 	footer {
 	  padding: 15px 6%; }
 	  
@@ -780,7 +780,7 @@ h6, .zeta { font-size: .75em; }
 	  padding-right: 5px; }
 	  
 	/**
-	 * Target IE10 because it no longer uses conditional comments 
+	 * Target IE10 without conditional comments, which it doesn't support.
 	 * Based on this article by Chris Coyier: http://css-tricks.com/ie-10-specific-styles/
 	 */
 	 
@@ -793,7 +793,7 @@ h6, .zeta { font-size: .75em; }
 	 * Target Firefox only 
 	 */		  
 	 
-	@-moz-document url-prefix() { /* Targets Firefox only */
+	@-moz-document url-prefix() { /* Target Firefox only */
 	  .icon-links a {
 		 margin-left: 0;
 		 margin-right: -8px;
@@ -822,7 +822,7 @@ h6, .zeta { font-size: .75em; }
 	#menu-left-sidebar-menu li {
       padding: 0; }
 
-    #menu-left-sidebar-menu li a { /* allows entire list item to be clickable */
+    #menu-left-sidebar-menu li a { /* Allow entire list item to be clickable */
       display: block;
       padding: 6px 0; }
 		

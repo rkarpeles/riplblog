@@ -15,11 +15,8 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-
 <div class="content">
-
 	<?php if ( have_posts() ): ?>
-
 	<?php if ( is_day() ) : ?>
 	<h2>Archive: <?php echo  get_the_date( 'D F Y' ); ?></h2>							
 	<?php elseif ( is_month() ) : ?>
@@ -29,30 +26,23 @@
 	<?php else : ?>
 	<h2>Archive</h2>	
 	<?php endif; ?>
-
-	<ol>
 	<?php while ( have_posts() ) : the_post(); ?>
-		<li>
-			<article>
-				<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-				<div class="time-date">
-					<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
-				</div>
-				
-				<div class="excerpt">
-					<?php the_excerpt(); ?>
-				</div>
-			</article>
-		</li>		
+		<article>
+			<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<div class="time-date">
+				<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
+			</div>
+			
+			<div class="excerpt">
+				<?php the_excerpt(); ?>
+			</div>
+		</article>
 	<?php endwhile; ?>
-	</ol>
 	<div class="posts-nav">	
 		<?php pagination(); ?>
 	</div>
 	<?php else: ?>
 	<h2>No posts to display</h2>	
 	<?php endif; ?>	
-	
 </div>
-
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>

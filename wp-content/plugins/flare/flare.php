@@ -820,7 +820,10 @@ class Flare {
             include( FLARE_DIRNAME . "/views/sharebar.php" );
             $no_buttons_html .= ob_get_contents();
         ob_end_clean();
-        
+		
+		/* ====================================================================================
+		   Place social sharing buttons at top of post. 
+		   ====================================================================================        
         if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
             $position = in_array( 'top', $positions ) ? 'top' : 'top-left';
             $top_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
@@ -828,8 +831,12 @@ class Flare {
 			$content = $share_text . $top_buttons_html . $content;
         } else {
             $content = $no_buttons_html . $content;
-        }
-    
+        }		
+		   ==================================================================================== */		
+		
+		/* ====================================================================================
+		   Place social sharing buttons at bottom of post. 
+		   ==================================================================================== */    
         if( in_array( 'bottom', $positions ) || in_array( 'bottom-left', $positions ) ) {
             $position = in_array( 'bottom', $positions ) ? 'bottom' : 'bottom-left';
             $bottom_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
