@@ -621,7 +621,7 @@ textarea {
  */ 
  
 .comments-section {
-  padding-top: 1em;
+  padding-top: .75em;
   margin-top: .25em;
   border-top: 1px solid #dedede; }
     
@@ -643,7 +643,7 @@ textarea {
   margin-right: 15px; }
   
 .comments-number {
-  padding-bottom: 1em;
+  padding-bottom: .5em;
   margin-bottom: 1.25em;
   border-bottom: 1px solid #dedede; }
   
