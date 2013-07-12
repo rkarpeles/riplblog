@@ -28,7 +28,7 @@
 	<?php if ( have_comments() ) : ?>
 	<div class="comments-number">
 		<h2><?php comments_number(); ?></h2>
-	</div>
+	</div>	
 		<?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>
 	<?php
 		/* If there are no comments and comments are closed, let's leave a little note, shall we?

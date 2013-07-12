@@ -352,11 +352,11 @@ input[type="text"],
 input[type="email"] {
   width: 100%; 
   max-width: 260px;
-  padding: 2px 4px; }  
+  padding: 3px 4px; }  
   
 textarea {
   width: 100%;
-  padding: 2px 4px;
+  padding: 3px 4px;
   color: #222;
   font-family: Arial, sans-serif; }
   
@@ -372,7 +372,7 @@ textarea {
   padding: 15px 20px 20px; }
   
 .signup-form-header {
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 8px 20px;
   background: #e0e0e0; }
   
@@ -630,7 +630,7 @@ textarea {
   list-style-type: none;
   margin-bottom: 1.25em; }
   
-#comments h4 {
+#comments .comment-name {
   font-size: 1.1em;
   margin-bottom: .15em; }
    
@@ -717,12 +717,15 @@ textarea {
 @media only screen and (max-width: 980px) {
 
 	.wrap {
-	  width: 88%;
+	  width: 90%;
 	  margin: 30px auto; }
 	  
 }   
   
-@media only screen and (max-width: 780px) {	
+@media only screen and (max-width: 760px) {	
+	
+	.hide-tablet-mobile {
+	  display: none; }
 	
 	.wrap {
 	  margin: 20px auto; }	 
@@ -765,7 +768,11 @@ textarea {
 	  margin-top: .3em; }
 
     .issue {
-	  display: none; }	
+	  display: none; }
+
+    input[type="text"], 
+    input[type="email"] {
+      max-width: none; } 	  
 
     .search-wrap {
 	  margin: 5px 0 0;

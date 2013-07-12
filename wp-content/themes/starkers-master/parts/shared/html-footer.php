@@ -10,7 +10,7 @@
 		 });
 		jQuery(window).resize(function(){
 			var winwidth = jQuery(window).innerWidth();
-			if(winwidth > 780){
+			if(winwidth > 760){
 				jQuery('#nav_menu-2').removeClass('showing').removeClass('hiding');    
 			}
 		});

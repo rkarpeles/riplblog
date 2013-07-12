@@ -131,9 +131,6 @@ img {
   -ms-interpolation-mode: bicubic; 
   vertical-align: middle; }
 
-label { 
-  cursor: pointer; }
-
 input, 
 select, 
 textarea { 
