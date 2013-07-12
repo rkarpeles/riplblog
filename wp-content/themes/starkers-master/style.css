@@ -371,6 +371,10 @@ textarea {
   background: #f0f0f0;
   padding: 15px 20px 20px; }
   
+#mc_embed_signup input[type="text"], 
+#mc_embed_signup input[type="email"] {
+  border: 1px solid #d0d0d0; }
+  
 .signup-form-header {
   margin-top: 20px;
   padding: 8px 20px;
