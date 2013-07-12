@@ -79,6 +79,16 @@ function starkers_comment( $comment, $args, $depth ) {
 		</article>
 	<?php endif;
 }
+
+/**
+ * Remove "Website" field in comment form 
+ */
+add_filter('comment_form_default_fields', 'url_filtered');
+function url_filtered( $fields ) {
+	if(isset( $fields['url']) )
+	unset( $fields['url'] );
+	return $fields;
+}
 	
 /* =======================================================
    Sidebars
