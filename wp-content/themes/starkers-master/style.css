@@ -32,6 +32,7 @@ TABLE OF CONTENTS:
 		- Pages
 		- Comments
 		- Archives Page 
+		- Search Results Page
 		- Miscellaneous 
 		- Helper Classes
 		- Responsive Nav Menu
@@ -352,12 +353,14 @@ input[type="text"],
 input[type="email"] {
   width: 100%; 
   max-width: 260px;
-  padding: 3px 4px; }  
+  padding: 3px 4px;
+  border: 1px solid #999; }  
   
 textarea {
   width: 100%;
   padding: 3px 4px;
   color: #222;
+  border: 1px solid #999;
   font-family: Arial, sans-serif; }
   
 .search-form label {
@@ -629,10 +632,14 @@ textarea {
   
 .search-results .excerpt {
   padding-bottom: .5em;
-  margin-bottom: 1em; }
+  margin-bottom: 0; }
+  
+.search-results .excerpt p {
+  margin-bottom: .5em; }
   
 .search-result-link {
-  margin-bottom: .1em; }
+  padding: .5em 0 .1em; 
+  margin: .1em 0 0; }
   
 .search-heading-main {
   padding-bottom: .5em; 
@@ -671,7 +678,7 @@ textarea {
   border-bottom: 1px solid #dedede; }
   
 .comments-time {
-  margin-bottom: .5em; } 
+  margin-bottom: .4em; } 
        
 /**
  * Miscellaneous 
