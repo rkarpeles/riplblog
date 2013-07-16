@@ -94,7 +94,7 @@ function url_filtered( $fields ) {
    Limit number of Archive months displayed
    ======================================================= */
 function my_limit_archives( $args ) {
-    $args['limit'] = 4;
+    $args['limit'] = 3;
     return $args;
 }
 add_filter( 'widget_archives_args', 'my_limit_archives' );
