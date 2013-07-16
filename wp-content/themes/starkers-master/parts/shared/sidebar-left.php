@@ -6,11 +6,11 @@
 			<?php endif; ?>
 			
 			<div class="search-wrap">				
-				<?php include ('/../../searchform.php'); ?>	
+				<?php include ('searchform.php'); ?>	
 			</div>
 				
 			<div class="current-issue-wrap">				
-				<?php include ('/../../current-issue.php'); ?>	
+				<?php include ('current-issue.php'); ?>	
 			</div>		
 	</div>	
 </div>
