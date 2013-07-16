@@ -44,8 +44,6 @@ TABLE OF CONTENTS:
 /* =======================================================
    0.0 Sensible defaults 
    ======================================================= */
-
-@import "css/reset.css";
   
 .group:after { 
   display: block; 
