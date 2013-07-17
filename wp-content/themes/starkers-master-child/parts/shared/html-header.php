@@ -14,7 +14,7 @@
 		<!--Custom stylesheet for this particular JMLS blog-->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ripl.css"/>
 		<!--Favicon-->
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico"/>
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico"/>
 		<!--Load jQuery script-->
 		<?php wp_enqueue_script("jquery"); ?>
 		<!--Picturefill for responsive images: https://github.com/scottjehl/picturefill-->
