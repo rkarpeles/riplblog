@@ -14,37 +14,33 @@
  * @since 		Starkers 4.0
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
-<div class="content">
-	<?php if ( have_posts() ): ?>
-	<?php if ( is_day() ) : ?>
-	<h2>Archive: <?php echo  get_the_date( 'D F Y' ); ?></h2>							
-	<?php elseif ( is_month() ) : ?>
-	<h2>Archive: <?php echo  get_the_date( 'F Y' ); ?></h2>	
-	<?php elseif ( is_year() ) : ?>
-	<h2>Archive: <?php echo  get_the_date( 'Y' ); ?></h2>								
-	<?php else : ?>
-	<h2>Archive</h2>	
-	<?php endif; ?>
-	<?php while ( have_posts() ) : the_post(); ?>
+<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+
+<?php if ( have_posts() ): ?>
+
+<?php if ( is_day() ) : ?>
+<h2>Archive: <?php echo  get_the_date( 'D M Y' ); ?></h2>							
+<?php elseif ( is_month() ) : ?>
+<h2>Archive: <?php echo  get_the_date( 'M Y' ); ?></h2>	
+<?php elseif ( is_year() ) : ?>
+<h2>Archive: <?php echo  get_the_date( 'Y' ); ?></h2>								
+<?php else : ?>
+<h2>Archive</h2>	
+<?php endif; ?>
+
+<ol>
+<?php while ( have_posts() ) : the_post(); ?>
+	<li>
 		<article>
-			<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			<div class="time-date">
-				<em>Posted by <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
-			</div>
-			<div class="excerpt-thumb">
-				<?php if ( has_post_thumbnail() ) { the_post_thumbnail('excerpt-thumb'); } ?>
-			</div>
-			<div class="excerpt">
-				<?php the_excerpt(); ?>
-			</div>
+			<h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
+			<?php the_content(); ?>
 		</article>
-	<?php endwhile; ?>
-	<div class="posts-nav">	
-		<?php pagination(); ?>
-	</div>
-	<?php else: ?>
-	<h2>No posts to display</h2>	
-	<?php endif; ?>	
-</div>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-right', 'parts/shared/footer','parts/shared/html-footer') ); ?>
+	</li>
+<?php endwhile; ?>
+</ol>
+<?php else: ?>
+<h2>No posts to display</h2>	
+<?php endif; ?>
+
+<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
