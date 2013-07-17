@@ -20,10 +20,10 @@
 		<!--Picturefill for responsive images: https://github.com/scottjehl/picturefill-->
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/picturefill.min.js"></script> 		
 		<!--[if IE]>
-		    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ie.css">
+			<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ie.css">	
 			<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv.js"></script> 
 			<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv-printshiv.js"></script> 
-		<![endif]-->		
+		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
