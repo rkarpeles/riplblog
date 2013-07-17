@@ -10,9 +10,7 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		<!--Reset stylesheet-->
-		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/reset.css"/>
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />		
 		<!--Custom stylesheet for this particular JMLS blog-->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/ripl.css"/>
 		<!--Favicon-->

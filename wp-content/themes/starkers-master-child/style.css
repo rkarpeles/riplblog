@@ -1,10 +1,11 @@
 /*
-Theme Name: 	Starkers
+Theme Name: 	Starkers Child
 Theme URI: 		http://viewportindustries.com/products/starkers
 Description: 	The totally stark Wordpress theme!
 Version: 		4.0
-Author: 		Elliot Jay Stocks & Keir Whitaker
+Author: 		Ryan Karpeles
 Author URI: 	http://viewportindustries.com
+Template:       starkers-master
 Tags: 			starkers, clean, basic
 */
 
@@ -42,9 +43,15 @@ TABLE OF CONTENTS:
 
 
 /* =======================================================
-   0.0 Sensible defaults 
+   Import parent theme stylesheet 
+   ======================================================= */  
+   
+   @import url("../starkers-master/style.css");
+   
 
-   ======================================================= */
+/* =======================================================
+   0.0 Sensible defaults 
+   ======================================================= */   
   
 .group:after { 
   display: block; 
@@ -550,17 +557,17 @@ textarea {
   padding-bottom: 4px;
   border-bottom: none; }
 
-#rss-2 .widget-title a {
+.widget_rss .widget-title a {
   color: #333; }
   
-#rss-2 ul {
+.widget_rss ul {
   font-size: .875em;
   line-height: 1.35; }
   
-#rss-2 li {
+.widget_rss li {
   padding: 6px 0; }
   
-#rss-2 cite {
+.widget_rss cite {
   font-size: .9em;
   color: #333; }
 
