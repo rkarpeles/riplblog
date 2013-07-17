@@ -58,7 +58,7 @@ TABLE OF CONTENTS:
   height: 0; 
   clear: both; 
   content: "."; 
-  visibility: hidden; /* For clearing */ }
+  visibility: hidden; } /* For clearing */ 
   
   
 /* =======================================================
@@ -103,6 +103,9 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0; }
+  
+li {
+  position: static; } /* Override 'position:relative' in original Starkers theme */ 
 
 .clearfix:before, 
 .clearfix:after {
@@ -113,7 +116,7 @@ hr {
   clear: both; }
   
 .clearfix {  
-  *zoom: 1; /* For IE 6/7 only */ } 
+  *zoom: 1; } /* For IE 6/7 only */ 
   
   
 /* =======================================================
@@ -158,7 +161,7 @@ hr {
 header {
   position: relative;
   z-index: 100; /* Keep logo above wrap overlap */
-  margin-bottom: 0; /* Remove spacing beneath header; */ }
+  margin-bottom: 0; } /* Remove spacing beneath header; */ 
   
 .logo { /* For H1 class in header */
   margin-bottom: 0; }
