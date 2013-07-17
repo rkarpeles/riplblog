@@ -29,7 +29,7 @@
 	<div class="comments-number">
 		<h2><?php comments_number(); ?></h2>
 	</div>	
-		<?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>
+		<?php wp_list_comments( array( 'callback' => 'new_starkers_comment' ) ); ?>
 	<?php
 		/* If there are no comments and comments are closed, let's leave a little note, shall we?
 		 * But we don't want the note on pages or post types that do not support comments.

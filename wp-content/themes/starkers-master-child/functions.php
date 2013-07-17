@@ -9,10 +9,31 @@
  * @subpackage 	Starkers
  * @since 		Starkers 4.0
  */
-
+   
 /* =======================================================
    Comments	
    ======================================================= */
+
+/**
+ * Custom callback for outputting comments 
+ *
+ * @return void
+ * @author Keir Whitaker
+ */
+ 
+function new_starkers_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment; 
+	?>
+	<?php if ( $comment->comment_approved == '1' ): ?>	
+	<li>
+		<article id="comment-<?php comment_ID() ?>">
+			<?php echo get_avatar( $comment ); ?>
+			<h4 class="comment-name"><?php comment_author_link() ?></h4>
+			<div class="comments-time"><time><a href="#comment-<?php comment_ID() ?>" pubdate><?php comment_date() ?> at <?php comment_time() ?></a></div>
+			<?php comment_text() ?>
+		</article>
+	<?php endif;
+}
 
 /**
  * Remove "Website" field in comment form 
