@@ -642,6 +642,18 @@ textarea {
  * Search Results Page
  */
  
+.search-heading-main {
+  padding-bottom: .5em; 
+  border-bottom: 1px solid #d8d8d8; 
+  margin-bottom: 0; }
+  
+.search-result-link {
+  padding: .5em 0 .1em; 
+  margin: .1em 0 0; }
+  
+.search-time-date {
+  margin-bottom: 2px; }
+ 
 .search-results .excerpt-link {
   display: none; }
   
@@ -651,15 +663,6 @@ textarea {
   
 .search-results .excerpt p {
   margin-bottom: .5em; }
-  
-.search-result-link {
-  padding: .5em 0 .1em; 
-  margin: .1em 0 0; }
-  
-.search-heading-main {
-  padding-bottom: .5em; 
-  border-bottom: 1px solid #d8d8d8; 
-  margin-bottom: 0; }
  
 /**
  * Comments 
