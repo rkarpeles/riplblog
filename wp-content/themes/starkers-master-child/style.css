@@ -761,7 +761,7 @@ textarea {
   display: none;
   padding: 8px 15px; } 
   
-#nav_menu-2 {
+#widget_nav_menu {
   display: block; 
   overflow: hidden; }
   
@@ -910,14 +910,14 @@ textarea {
       margin-bottom: 10px;
       cursor: pointer; }
 
-	#nav_menu-2 {	  
+	#widget_nav_menu {	  
 	  height: 0; }
 	  
-	#nav_menu-2.showing {        
+	#widget_nav_menu.showing {        
       margin-top: 15px;
       height: auto; }
 		
-    #nav_menu-2.hiding {        
+    #widget_nav_menu.hiding {        
       height: 0; } 
 	  
 	#menu-left-sidebar-menu li {
