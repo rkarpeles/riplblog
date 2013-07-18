@@ -20,7 +20,7 @@
 			<div class="time-date">
 				<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
 			</div>	
-				
+			
 			<div class="excerpt">
 				<?php the_excerpt(); ?>
 			</div>

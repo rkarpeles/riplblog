@@ -91,6 +91,19 @@ function my_register_sidebars() {
 }
 
 /* =======================================================
+   Search results filter to only show posts
+   ======================================================= */
+
+function SearchFilter($query) {
+	if ($query->is_search && !is_admin ) {
+	$query->set('post_type', 'post');
+	}
+return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');
+
+/* =======================================================
    Menus
    ======================================================= */
    
