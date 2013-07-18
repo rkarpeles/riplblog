@@ -15,7 +15,7 @@
 		</div>		
 		<div class="icon-links">
 			<div class="icon-links-list">
-				<a href="contact" class="mail-icon"><div aria-hidden="true" data-icon="&#xe003;"></div></a>
+				<a href="<?php bloginfo('url'); ?>/contact" class="mail-icon"><div aria-hidden="true" data-icon="&#xe003;"></div></a>
 				<a href="<?php bloginfo('rss2_url'); ?>" class="rss-icon"><div aria-hidden="true" data-icon="&#xe002;"></div></a>
 				<a href="https://www.facebook.com/JMRIPL" class="facebook-icon"><div aria-hidden="true" data-icon="&#xe000;"></div></a>
 				<a href="https://twitter.com/jmripl" class="twitter-icon"><div aria-hidden="true" data-icon="&#xe001;"></div></a>

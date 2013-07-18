@@ -48,6 +48,7 @@ function url_filtered( $fields ) {
 /* =======================================================
    Limit number of Archive months displayed
    ======================================================= */
+   
 function my_limit_archives( $args ) {
     $args['limit'] = 3;
     return $args;
