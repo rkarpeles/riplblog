@@ -17,9 +17,9 @@
 		<article>
 			<h3 class="search-result-link"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>			
 			
-			<div class="time-date">
-				<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>
-			</div>	
+			<div class="search-time-date">
+				<em>By <?php the_author();?> on <?php the_time('l, F jS, Y'); ?></em>			
+			</div>
 			
 			<div class="excerpt">
 				<?php the_excerpt(); ?>
