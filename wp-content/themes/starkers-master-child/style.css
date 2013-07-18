@@ -46,7 +46,7 @@ TABLE OF CONTENTS:
    Import parent theme stylesheet 
    ======================================================= */  
    
-   @import url("../starkers-master/style.css");
+@import url("../starkers-master/style.css");
    
 
 /* =======================================================
@@ -58,7 +58,15 @@ TABLE OF CONTENTS:
   height: 0; 
   clear: both; 
   content: "."; 
-  visibility: hidden; } /* For clearing */ 
+  visibility: hidden; } /* For clearing */   
+  
+::selection { 
+  background:#3297fd; 
+  color:#fff; } /* Text highlighting color */
+  
+::-moz-selection { 
+  background:#3297fd; 
+  color:#fff; } /* Text highlighting color (Firefox) */
   
   
 /* =======================================================
@@ -301,7 +309,12 @@ h6, .zeta 	 { font-size: .75em; }
   margin-bottom: .5em;
   padding-bottom: .25em;
   font-size: 1.65em;
-  border-bottom: 1px solid #dedede; }
+  border-bottom: 1px solid #dedede; }  
+ 
+.heading-alt {
+  padding-bottom: .5em; 
+  border-bottom: 1px solid #d8d8d8; 
+  margin-bottom: 0; }
   
 /* Icon Fonts
    ======================================================= */
@@ -641,11 +654,6 @@ textarea {
 /**
  * Search Results Page
  */
- 
-.search-heading-main {
-  padding-bottom: .5em; 
-  border-bottom: 1px solid #d8d8d8; 
-  margin-bottom: 0; }
   
 .search-result-link {
   padding: .5em 0 .1em; 
@@ -663,6 +671,9 @@ textarea {
   
 .search-results .excerpt p {
   margin-bottom: .5em; }
+  
+.search-posts-nav {
+  margin-top: 1.2em; }
  
 /**
  * Comments 

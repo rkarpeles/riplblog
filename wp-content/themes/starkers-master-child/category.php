@@ -12,7 +12,7 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header', 'parts/shared/sidebar-left' ) ); ?>
 <div class="content">
 	<?php if ( have_posts() ): ?>
-	<h2>Category Archive: <?php echo single_cat_title( '', false ); ?></h2>
+	<h2 class="heading-alt bot-mar-3">Category Archive: <?php echo single_cat_title( '', false ); ?></h2>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<article>
 			<h1><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
