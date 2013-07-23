@@ -1,9 +1,15 @@
+.flare-horizontal.flare-position-bottom-left {
+  margin-bottom: 15px; }
+
 .flare-horizontal .flare-flyout {
-  bottom: 102px;
+  bottom: 92px;
   margin-left: -4px; }
   
 .flare-horizontal .flare-flyout .flare-flyout-inner {
   height: 32px; }
   
 .flare-flyout.flare-flyout-filament {
+  display: none; }
+  
+.flare-horizontal.flare-hidden {
   display: none; }

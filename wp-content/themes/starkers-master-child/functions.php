@@ -9,6 +9,17 @@
  * @subpackage 	Starkers
  * @since 		Starkers 4.0
  */
+ 
+ /* =======================================================
+   Enqueue Scripts
+   ======================================================= */
+ 
+add_action( 'wp_enqueue_scripts', 'new_starkers_script_enqueuer' );
+ 
+function new_starkers_script_enqueuer() {
+	wp_register_script( 'flare-updates', get_stylesheet_directory_uri().'/js/flare-updates.js', array( 'jquery' ) );
+	wp_enqueue_script( 'flare-updates' );
+}
    
 /* =======================================================
    Comments	
