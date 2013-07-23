@@ -3,7 +3,7 @@
 Plugin Name: Flare
 Plugin URI: http://www.dtelepathy.com/
 Description: Flare is a simple yet eye-catching social sharing bar that gets you followed and lets your content get shared via posts, pages, and media types.
-Version: 1.2.3
+Version: 1.2.4
 Author: dtelepathy
 Author URI: http://www.dtelepathy.com/
 Contributors: kynatro, dtelepathy, moonspired, nielsfogt, dtlabs
@@ -43,7 +43,8 @@ class Flare {
         'enabletotal' => true,
         'enablehumbleflare' => false,
         'humbleflarecount' => 5,
-        'closablevertical' => true
+        'closablevertical' => true,
+        'filamenticon' => true
     );
     
     var $iconstyles = array(
@@ -117,11 +118,11 @@ class Flare {
         add_action( 'init', array( &$this, 'wp_register_styles' ) );
         // Custom routing
         add_action( 'init', array( &$this, 'route' ) );
-        // Output horizontal share bars
+        // Output horizontal flare bars
         add_filter( 'the_content', array( &$this, 'the_content' ) );
         // Add a settings link next to the "Deactivate" link on the plugin listing page
         add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
-        // Output vertical share bar
+        // Output vertical flare bar
         add_action( 'wp_footer', array( &$this, 'wp_footer' ) );
         // Load Flare widget
         add_action( 'widgets_init', array( 'FlareFollowWidget', 'initialize' ) );
@@ -204,6 +205,7 @@ class Flare {
             $data['enabletotal'] = (bool) isset( $data['enabletotal'] );
             $data['enablehumbleflare'] = (bool) isset( $data['enablehumbleflare'] );
             $data['closablevertical'] = (bool) isset( $data['closablevertical'] );
+            $data['filamenticon'] = (bool) isset( $data['filamenticon'] );
             
             $menu_order = 1;
             foreach( $buttons as $button ) {
@@ -392,7 +394,7 @@ class Flare {
         );
         
         // Link to dt.Labs Products
-        add_submenu_page( FLARE_BASENAME, 'Filament', 'See More Products', 'update_plugins', FLARE_BASENAME . '/filament', array( &$this, 'admin_options_page' ) );
+        add_submenu_page( FLARE_BASENAME, 'Filament', 'Get Flare Pro', 'update_plugins', FLARE_BASENAME . '/filament', array( &$this, 'admin_options_page' ) );
         
         // Add print scripts and styles action based off the option page hook
         foreach( $this->menu_hooks as &$menu_hook ) {
@@ -794,6 +796,7 @@ class Flare {
         $positions = $this->_get_option( 'positions' );
         $iconstyle = $this->_get_option( 'iconstyle' );
         $backgroundcolor = $this->_get_option( 'backgroundcolor' );
+        $filamenticon = $this->_get_option( 'filamenticon' );
         $buttons = $this->Button->get();
         
         $counts = (array) get_post_meta( $post->ID, "_{$this->namespace}_counts", true );
@@ -820,28 +823,19 @@ class Flare {
             include( FLARE_DIRNAME . "/views/sharebar.php" );
             $no_buttons_html .= ob_get_contents();
         ob_end_clean();
-		
-		/* ====================================================================================
-		   Place social sharing buttons at top of post. 
-		   ====================================================================================        
+        
         if( in_array( 'top', $positions ) || in_array( 'top-left', $positions ) ) {
             $position = in_array( 'top', $positions ) ? 'top' : 'top-left';
             $top_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-			$share_text = '<div class="share-this"><em>Share this:</em></div>';
-			$content = $share_text . $top_buttons_html . $content;
+            $content = $top_buttons_html . $content;
         } else {
             $content = $no_buttons_html . $content;
-        }		
-		   ==================================================================================== */		
-		
-		/* ====================================================================================
-		   Place social sharing buttons at bottom of post. 
-		   ==================================================================================== */    
+        }
+    
         if( in_array( 'bottom', $positions ) || in_array( 'bottom-left', $positions ) ) {
             $position = in_array( 'bottom', $positions ) ? 'bottom' : 'bottom-left';
             $bottom_buttons_html = preg_replace( "/class\=\"(" . $namespace . "-" . $direction . ")/", "class=\"$1 " . $namespace . "-position-" . $position, $buttons_html );
-			$share_text = '<div class="share-this"><em>Share this:</em></div>';
-			$content = $content . $share_text . $bottom_buttons_html;
+            $content = $content . $bottom_buttons_html;
         }
         
         return $content;
@@ -903,7 +897,7 @@ class Flare {
     /**
      * Hook into WordPress wp_footer action
      * 
-     * Outputs the share bar element for display on the page next to the post.
+     * Outputs the flare bar element for display on the page next to the post.
      * 
      * @uses is_admin()
      * @uses get_permalink()
@@ -933,6 +927,7 @@ class Flare {
             $iconstyle = $this->_get_option( 'iconstyle' );
             $backgroundcolor = $this->_get_option( 'backgroundcolor' );
             $closablevertical = $this->_get_option( 'closablevertical' );
+            $filamenticon = $this->_get_option( 'filamenticon' );
             $side = "";
             
             $counts = (array) get_post_meta( $wp_query->post->ID, "_{$this->namespace}_counts", true );

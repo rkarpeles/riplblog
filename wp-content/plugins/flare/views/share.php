@@ -50,7 +50,7 @@
             
             <fieldset id="<?php echo $namespace; ?>-sharing-form-wrapper" class="clearfix">
                 <div id="<?php echo $namespace; ?>-button-options" class="clearfix">
-                    <h3><?php _e( "Stylize <strong>your share bar</strong>", $namespace ); ?></h3>
+                    <h3><?php _e( "Stylize <strong>your Flare bar</strong>", $namespace ); ?></h3>
                     
                     <input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save') ?>" />
                     
@@ -69,10 +69,11 @@
                     </div>
                     
                     <div id="<?php echo $namespace; ?>-enablecounters-wrapper" class="button-option">
-                        <h4><?php _e( "Flare Score", $namespace ); ?></h4>
+                        <h4><?php _e( "Options", $namespace ); ?></h4>
                         <p><?php flare_html_input( "data[enablecounters]", $data['enablecounters'], array( 'type' => "checkbox", 'label' => "Show Social Flare Score Counters", 'attr' => array( 'class' => "fancy" ) ) ); ?></p>
                         <p><?php flare_html_input( "data[enabletotal]", $data['enabletotal'], array( 'type' => "checkbox", 'label' => "Show Total Flare Count", 'attr' => array( 'class' => "fancy" ) ) ); ?></p>
                         <p><?php flare_html_input( "data[closablevertical]", $data['closablevertical'], array( 'type' => "checkbox", 'label' => "Allow visitors to hide the vertical sharebar", 'attr' => array( 'class' => "fancy" ) ) ); ?></p>
+                        <p><?php flare_html_input( "data[filamenticon]", $data['filamenticon'], array( 'type' => "checkbox", 'label' => "Show love for Flare: Your support helps us build free products!", 'attr' => array( 'class' => "fancy" ) ) ); ?></p>
                         <p class="label">
                             <?php flare_html_input( "data[enablehumbleflare]", $data['enablehumbleflare'], array( 'type' => "checkbox", 'label' => "Hide Flare Count if under", 'attr' => array( 'class' => "fancy" ) ) ); ?>
                             <?php
@@ -137,7 +138,7 @@
             
             <fieldset id="<?php echo $namespace; ?>-data-wrapper" class="clearfix">
                 <div id="<?php echo $namespace; ?>-data">
-                    <h3><?php printf( __( 'Choose %swhat you want your share bar to appear on%s', $namespace ), "<strong>", "</strong>" ); ?></h3>
+                    <h3><?php printf( __( 'Choose %swhat you want your Flare bar to appear on%s', $namespace ), "<strong>", "</strong>" ); ?></h3>
                     
                     <ul class="clearfix">
                         <?php foreach( $post_types as $post_type ): ?>

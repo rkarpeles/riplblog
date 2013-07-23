@@ -7,7 +7,8 @@
 <div class="wrap">
 
 	<header>
-		<a href="<?php echo bloginfo('url'); ?>/">
+		<a href="<?php echo bloginfo('url'); ?>/">		
+			<h1 class="main-logo-h1">Review of Intellectual Property Law Blog</h1>			
 			<!-- Picturefill for loading images based on user's viewport width. 
 			     More info here: https://github.com/scottjehl/picturefill-->
 			<span data-picture data-alt="Review of Intellectual Property Law Blog">

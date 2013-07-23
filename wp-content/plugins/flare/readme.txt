@@ -73,6 +73,11 @@ When it all boils down to it, Flare is just HTML and CSS. We try to place the Fl
 Unfortunately we cannot check the size of the content inside the social widgets themselves as they are in IFRAME tags. We set the IFRAME tag dimensions to work pretty well for most situations, but sometimes, they need to be wider. As mentioned in the previous FAQ though, you can always write a line or two of CSS in your theme's style.css file to change the width of the bubbles.
 
 == Changelog ==
+= 1.2.4 =
+* Added option to disable Filament icon
+* Updated messaging to better describe the future of Flare (Pro)
+* Increased width of horizontal bubbles to account for a sizing bug with the LinkedIn share button
+
 = 1.2.3 =
 * Load all social code via JavaScript instead of on-page code to improve load time
 * Updated some admin links
