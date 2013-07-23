@@ -25,5 +25,7 @@
 			<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv-printshiv.js"></script> 
 		<![endif]-->
 		<?php wp_head(); ?>
+		<!--Flare Plugin Overrides-->
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/flare-overrides.css">
 	</head>
 	<body <?php body_class(); ?>>

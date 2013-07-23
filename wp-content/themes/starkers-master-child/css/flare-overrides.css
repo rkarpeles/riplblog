@@ -1,0 +1,9 @@
+.flare-horizontal .flare-flyout {
+  bottom: 102px;
+  margin-left: -4px; }
+  
+.flare-horizontal .flare-flyout .flare-flyout-inner {
+  height: 32px; }
+  
+.flare-flyout.flare-flyout-filament {
+  display: none; }
