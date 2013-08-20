@@ -330,7 +330,7 @@ blockquote {
   background: #f6f6f6;
   border-left: 5px solid #dedede;}
   
-blockquote p {
+blockquote p:last-child {
   margin: 0; }  
   
 .page-heading {
@@ -668,8 +668,7 @@ textarea {
   margin: 0 0 1.25em 1.5em; } 
  
 .content li {
-  list-style: disc; 
-  padding: 3px 0; }
+  list-style: disc; }
   
 .content ol { 
   margin: 0 0 1.25em 1.5em; }
