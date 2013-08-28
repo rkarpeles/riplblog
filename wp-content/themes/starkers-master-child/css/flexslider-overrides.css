@@ -6,7 +6,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  opacity: .9;
+  opacity: 1;
+  zoom: 1;
   background: rgb(0, 0, 0); /* The Fallback */
   background: rgb(0, 0, 0, .8); 
   color: white;
@@ -20,6 +21,7 @@
 .metaslider .flex-control-nav {
   line-height: 11px;
   height: 40px;
+  bottom: -40px;
   padding: 20px 0 0; }
   
 .metaslider .flex-control-paging li a {
