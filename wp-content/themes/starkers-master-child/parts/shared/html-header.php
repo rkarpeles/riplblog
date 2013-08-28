@@ -27,5 +27,7 @@
 		<?php wp_head(); ?>
 		<!--Flare Plugin Overrides-->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/flare-overrides.css">
+		<!--Meta Slider Plugin Overrides-->
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/flexslider-overrides.css">
 	</head>
 	<body <?php body_class(); ?>>

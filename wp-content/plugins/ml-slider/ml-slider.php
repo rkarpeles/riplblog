@@ -3,7 +3,7 @@
  * Plugin Name: Meta Slider
  * Plugin URI: http://www.metaslider.com
  * Description: 4 sliders in 1! Choose from Nivo Slider, Flex Slider, Coin Slider or Responsive Slides.
- * Version: 2.1.6
+ * Version: 2.2.2
  * Author: Matcha Labs
  * Author URI: http://www.matchalabs.com
  * License: GPLv2 or later
@@ -14,7 +14,7 @@
  * GNU General Public License for more details.
  */
 
-define('METASLIDER_VERSION', '2.1.6');
+define('METASLIDER_VERSION', '2.2.2');
 define('METASLIDER_BASE_URL', plugin_dir_url(__FILE__));
 define('METASLIDER_ASSETS_URL', METASLIDER_BASE_URL . 'assets/');
 define('METASLIDER_BASE_DIR_LONG', dirname(__FILE__));
@@ -36,6 +36,9 @@ require_once( METASLIDER_INC_DIR . 'metaslider.imagehelper.class.php' );
 
 // include widget
 require_once( METASLIDER_INC_DIR . 'metaslider.widget.class.php' );
+
+// include system check
+require_once( METASLIDER_INC_DIR . 'metaslider.systemcheck.class.php' );
 
 /**
  * Register the plugin.
@@ -68,9 +71,6 @@ class MetaSliderPlugin {
         add_action('media_upload_metaslider_pro', array($this, 'metaslider_pro_tab'));
         
 
-        // system check
-        add_action('admin_notices', array($this, 'system_check'));
-
         // add 'go pro' link to plugin options
         $plugin = plugin_basename(__FILE__);
         add_filter("plugin_action_links_{$plugin}", array($this,'upgrade_to_pro') );
@@ -82,13 +82,8 @@ class MetaSliderPlugin {
      * Check our WordPress installation is compatible with Meta Slider
      */
     public function system_check(){
-        if (!function_exists('wp_enqueue_media')) {
-            echo '<div id="message" class="updated"><p><b>Warning</b> Meta Slider requires WordPress 3.5 or above. Please upgrade your WordPress installation.</p></div>';
-        }
-
-        if ((!extension_loaded('gd') || !function_exists('gd_info')) && (!extension_loaded( 'imagick' ) || !class_exists( 'Imagick' ) || !class_exists( 'ImagickPixel' ))) {
-            echo '<div id="message" class="updated"><p><b>Warning</b> Meta Slider requires the GD or ImageMagick PHP extension. Please contact your hosting provider.</p></div>';
-        }
+        $systemCheck = new MetaSliderSystemCheck();
+        $systemCheck->check();
     }
 
     /**
@@ -112,9 +107,15 @@ class MetaSliderPlugin {
     public function iframe() {
         wp_enqueue_style('metaslider-admin-styles', METASLIDER_ASSETS_URL . 'metaslider/admin.css', false, METASLIDER_VERSION);
         wp_enqueue_script('google-font-api', 'http://fonts.googleapis.com/css?family=PT+Sans:400,700');
+        
+        $link = apply_filters('metaslider_hoplink', 'http://www.metaslider.com/upgrade/');
+        $link .= '?utm_source=lite&utm_medium=more-slide-types&utm_campaign=pro';
+
         echo "<div class='metaslider'>";
-        echo "<p style='text-align: center; font-size: 1.2em;'>Get the Pro Addon pack to add support for: <b>Content Feed</b> Slides, <b>YouTube</b> Slides, <b>HTML</b> Slides & <b>Vimeo</b> Slides</p>";
-        echo "<a class='probutton' href='http://www.metaslider.com/upgrade/' target='_blank'>Get <span class='logo'><strong>Meta</strong>Slider</span><span class='super'>Pro</span></a>";
+        echo "<p style='text-align: center; font-size: 1.2em; margin-top: 50px;'>Get the Pro Addon pack to add support for: <b>Post Feed</b> Slides, <b>YouTube</b> Slides, <b>HTML</b> Slides & <b>Vimeo</b> Slides</p>";
+        echo "<p style='text-align: center; font-size: 1.2em;'><b>NEW:</b> Animated HTML <b>Layer</b> Slides (with an awesome Drag & Drop editor!)</p>";
+        echo "<p style='text-align: center; font-size: 1.2em;'><b>NEW:</b> Live Theme Editor!</p>";
+        echo "<a class='probutton' href='{$link}' target='_blank'>Get <span class='logo'><strong>Meta</strong>Slider</span><span class='super'>Pro</span></a>";
         echo "<span class='subtext'>Opens in a new window</span>";
         echo "</div>";
     }
@@ -226,6 +227,10 @@ class MetaSliderPlugin {
     public function register_admin_menu() {
         $title = apply_filters('metaslider_menu_title', "Meta Slider");
 
+        if ($title == "Meta Slider") {
+            $title = "Meta Slider Lite";
+        }
+
         $page = add_menu_page($title, $title, 'edit_others_posts', 'metaslider', array(
             $this, 'render_admin_page'
         ), METASLIDER_ASSETS_URL . 'metaslider/matchalabs.png', 9501);
@@ -234,6 +239,7 @@ class MetaSliderPlugin {
         add_action('admin_print_scripts-' . $page, array($this, 'register_admin_scripts'));
         add_action('admin_print_styles-' . $page, array($this, 'register_admin_styles'));
         add_action('load-' . $page, array($this, 'help_tab'));
+
     }
 
     /**
@@ -241,8 +247,12 @@ class MetaSliderPlugin {
      */
     public function go_pro_cta() {
         if (!is_plugin_active('ml-slider-pro/ml-slider-pro.php')) {
-            $goPro = "<div id='goProWrap'><span>Meta Slider Free v" . METASLIDER_VERSION . 
-                " - <a target='_blank' href='http://www.metaslider.com'>" . 
+            $link = apply_filters('metaslider_hoplink', 'http://www.metaslider.com/upgrade/');
+
+            $link .= '?utm_source=lite&utm_medium=nag&utm_campaign=pro';
+
+            $goPro = "<div id='goProWrap'><span>Meta Slider Lite v" . METASLIDER_VERSION . 
+                " - <a target='_blank' href='{$link}'>" . 
                 __('Upgrade to Pro $19', 'metaslider') . 
                 "</a></span></div>";
 
@@ -490,6 +500,7 @@ class MetaSliderPlugin {
     public function render_admin_page() {
         $this->admin_process();
         $this->go_pro_cta();
+        $this->system_check();
         ?>
 
         <script type='text/javascript'>
@@ -563,7 +574,19 @@ class MetaSliderPlugin {
                                         <label for='flex' title='<?php echo $this->get_library_details(2.1, true, 17, true); ?>' class='tipsy-tooltip-top'>FlexSlider</label>
                                         <input class="select-slider" id='flex' rel='flex' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'flex') echo 'checked=checked' ?> value='flex' />
                                     </div>
-								</td>
+                                    <div class='slider-lib responsive'>
+                                        <label for='responsive' title='<?php echo $this->get_library_details(1.53, true, 3, true); ?>' class='tipsy-tooltip-top'>Responsive</label>
+                                        <input class="select-slider" id='responsive' rel='responsive' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'responsive') echo 'checked=checked' ?> value='responsive' />
+                                    </div>
+                                    <div class='slider-lib nivo'>
+                                        <label for='nivo' title='<?php echo $this->get_library_details(3.2, true, 12, true); ?>' class='tipsy-tooltip-top'>NivoSlider</label>
+                                        <input class="select-slider" id='nivo' rel='nivo' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'nivo') echo 'checked=checked' ?> value='nivo' />
+                                    </div>
+                                    <div class='slider-lib coin'>
+                                        <label for='coin' title='<?php echo $this->get_library_details(1.0, false, 8, true); ?>' class='tipsy-tooltip-top'>CoinSlider</label>
+                                        <input class="select-slider" id='coin' rel='coin' type='radio' name="settings[type]" <?php if ($this->slider->get_setting('type') == 'coin') echo 'checked=checked' ?> value='coin' />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td width='40%' class='tipsy-tooltip' title="<?php _e("Set the initial size for the slides (width x height)", 'metaslider') ?>">
